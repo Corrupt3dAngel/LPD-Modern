@@ -81,6 +81,7 @@
             this.flatTextBox2 = new FlatUI.FlatTextBox();
             this.flatTextBox1 = new FlatUI.FlatTextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.flatTextBox24 = new FlatUI.FlatTextBox();
             this.flatTextBox19 = new FlatUI.FlatTextBox();
             this.flatTextBox20 = new FlatUI.FlatTextBox();
             this.flatTextBox21 = new FlatUI.FlatTextBox();
@@ -148,7 +149,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.flatTextBox24 = new FlatUI.FlatTextBox();
             this.panel1.SuspendLayout();
             this.tabPage_Modern_Black1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -169,16 +169,20 @@
             this.kryptonPalette1.BasePaletteMode = Krypton.Toolkit.PaletteMode.Office365BlackDarkMode;
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Rounding = 12F;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.ButtonEdgeInset = 10;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
             this.kryptonPalette1.PanelStyles.PanelCommon.StateCommon.ColorAlign = Krypton.Toolkit.PaletteRectangleAlign.Local;
+            this.kryptonPalette1.PanelStyles.PanelCommon.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             // 
             // panel1
             // 
@@ -357,7 +361,7 @@
             this.materialButton6.Depth = 0;
             this.materialButton6.HighEmphasis = true;
             this.materialButton6.Icon = null;
-            this.materialButton6.Location = new System.Drawing.Point(575, 376);
+            this.materialButton6.Location = new System.Drawing.Point(570, 376);
             this.materialButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton6.Name = "materialButton6";
@@ -378,7 +382,7 @@
             this.materialButton5.Depth = 0;
             this.materialButton5.HighEmphasis = true;
             this.materialButton5.Icon = null;
-            this.materialButton5.Location = new System.Drawing.Point(461, 377);
+            this.materialButton5.Location = new System.Drawing.Point(459, 376);
             this.materialButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton5.Name = "materialButton5";
@@ -399,7 +403,7 @@
             this.materialButton4.Depth = 0;
             this.materialButton4.HighEmphasis = true;
             this.materialButton4.Icon = null;
-            this.materialButton4.Location = new System.Drawing.Point(347, 376);
+            this.materialButton4.Location = new System.Drawing.Point(346, 376);
             this.materialButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton4.Name = "materialButton4";
@@ -420,7 +424,7 @@
             this.materialButton3.Depth = 0;
             this.materialButton3.HighEmphasis = true;
             this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(232, 377);
+            this.materialButton3.Location = new System.Drawing.Point(232, 376);
             this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton3.Name = "materialButton3";
@@ -651,7 +655,7 @@
             this.materialButton23.Depth = 0;
             this.materialButton23.HighEmphasis = true;
             this.materialButton23.Icon = null;
-            this.materialButton23.Location = new System.Drawing.Point(575, 376);
+            this.materialButton23.Location = new System.Drawing.Point(570, 376);
             this.materialButton23.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton23.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton23.Name = "materialButton23";
@@ -672,7 +676,7 @@
             this.materialButton24.Depth = 0;
             this.materialButton24.HighEmphasis = true;
             this.materialButton24.Icon = null;
-            this.materialButton24.Location = new System.Drawing.Point(460, 377);
+            this.materialButton24.Location = new System.Drawing.Point(459, 376);
             this.materialButton24.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton24.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton24.Name = "materialButton24";
@@ -693,7 +697,7 @@
             this.materialButton25.Depth = 0;
             this.materialButton25.HighEmphasis = true;
             this.materialButton25.Icon = null;
-            this.materialButton25.Location = new System.Drawing.Point(347, 376);
+            this.materialButton25.Location = new System.Drawing.Point(232, 376);
             this.materialButton25.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton25.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton25.Name = "materialButton25";
@@ -714,7 +718,7 @@
             this.materialButton26.Depth = 0;
             this.materialButton26.HighEmphasis = true;
             this.materialButton26.Icon = null;
-            this.materialButton26.Location = new System.Drawing.Point(232, 377);
+            this.materialButton26.Location = new System.Drawing.Point(117, 376);
             this.materialButton26.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton26.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton26.Name = "materialButton26";
@@ -735,7 +739,7 @@
             this.materialButton27.Depth = 0;
             this.materialButton27.HighEmphasis = true;
             this.materialButton27.Icon = null;
-            this.materialButton27.Location = new System.Drawing.Point(117, 376);
+            this.materialButton27.Location = new System.Drawing.Point(2, 376);
             this.materialButton27.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton27.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton27.Name = "materialButton27";
@@ -756,17 +760,18 @@
             this.materialButton28.Depth = 0;
             this.materialButton28.HighEmphasis = true;
             this.materialButton28.Icon = null;
-            this.materialButton28.Location = new System.Drawing.Point(2, 376);
+            this.materialButton28.Location = new System.Drawing.Point(346, 376);
             this.materialButton28.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton28.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton28.Name = "materialButton28";
             this.materialButton28.NoAccentTextColor = System.Drawing.Color.Empty;
             this.materialButton28.Size = new System.Drawing.Size(107, 36);
             this.materialButton28.TabIndex = 13;
-            this.materialButton28.Text = "Atbash";
+            this.materialButton28.Text = "Reverse Keys";
             this.materialButton28.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton28.UseAccentColor = false;
             this.materialButton28.UseVisualStyleBackColor = true;
+            this.materialButton28.Click += new System.EventHandler(this.materialButton28_Click);
             // 
             // listBox4
             // 
@@ -1140,6 +1145,23 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Results";
             // 
+            // flatTextBox24
+            // 
+            this.flatTextBox24.BackColor = System.Drawing.Color.Transparent;
+            this.flatTextBox24.FocusOnHover = false;
+            this.flatTextBox24.Hint = "";
+            this.flatTextBox24.Location = new System.Drawing.Point(545, 390);
+            this.flatTextBox24.MaxLength = 32767;
+            this.flatTextBox24.Multiline = false;
+            this.flatTextBox24.Name = "flatTextBox24";
+            this.flatTextBox24.ReadOnly = false;
+            this.flatTextBox24.Size = new System.Drawing.Size(136, 29);
+            this.flatTextBox24.TabIndex = 33;
+            this.flatTextBox24.Text = "flatTextBox24";
+            this.flatTextBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.flatTextBox24.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.flatTextBox24.UseSystemPasswordChar = false;
+            // 
             // flatTextBox19
             // 
             this.flatTextBox19.BackColor = System.Drawing.Color.Transparent;
@@ -1365,7 +1387,7 @@
         '\"',
         '\'',
         '\''};
-            this.fastColoredTextBox3.AutoScrollMinSize = new System.Drawing.Size(281, 18);
+            this.fastColoredTextBox3.AutoScrollMinSize = new System.Drawing.Size(252, 18);
             this.fastColoredTextBox3.BackBrush = null;
             this.fastColoredTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.fastColoredTextBox3.BookmarkColor = System.Drawing.Color.Blue;
@@ -1547,7 +1569,7 @@
         '\"',
         '\'',
         '\''};
-            this.fastColoredTextBox4.AutoScrollMinSize = new System.Drawing.Size(281, 18);
+            this.fastColoredTextBox4.AutoScrollMinSize = new System.Drawing.Size(252, 18);
             this.fastColoredTextBox4.BackBrush = null;
             this.fastColoredTextBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.fastColoredTextBox4.BookmarkColor = System.Drawing.Color.Blue;
@@ -2164,23 +2186,6 @@
             this.label8.TabIndex = 8;
             this.label8.Text = "UI/Design -";
             // 
-            // flatTextBox24
-            // 
-            this.flatTextBox24.BackColor = System.Drawing.Color.Transparent;
-            this.flatTextBox24.FocusOnHover = false;
-            this.flatTextBox24.Hint = "";
-            this.flatTextBox24.Location = new System.Drawing.Point(545, 390);
-            this.flatTextBox24.MaxLength = 32767;
-            this.flatTextBox24.Multiline = false;
-            this.flatTextBox24.Name = "flatTextBox24";
-            this.flatTextBox24.ReadOnly = false;
-            this.flatTextBox24.Size = new System.Drawing.Size(136, 29);
-            this.flatTextBox24.TabIndex = 33;
-            this.flatTextBox24.Text = "flatTextBox24";
-            this.flatTextBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.flatTextBox24.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.flatTextBox24.UseSystemPasswordChar = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2200,6 +2205,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.HighQuality;
+            this.StateCommon.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.StateCommon.Border.Rounding = 12F;
             this.Text = "LPDecrypt";
             this.Load += new System.EventHandler(this.Form1_Load);

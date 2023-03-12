@@ -1224,5 +1224,28 @@ namespace LPD_Modern
         {
 
         }
+
+        private void materialButton28_Click(object sender, EventArgs e)
+        {
+            // Get the current text in the fastColoredTextBox3 control
+            string originalText = fastColoredTextBox2.Text;
+
+            // Split the text into lines
+            string[] lines = originalText.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+
+            // Reverse each line of the text
+            for (int i = 0; i < lines.Length; i++)
+            {
+                char[] chars = lines[i].ToCharArray();
+                Array.Reverse(chars);
+                lines[i] = new string(chars);
+            }
+
+            // Join the reversed lines back into a single string
+            string reversedText = string.Join(Environment.NewLine, lines);
+
+            // Set the text of the fastColoredTextBox3 control to the reversed text
+            fastColoredTextBox2.Text = reversedText;
+        }
     }
 }
