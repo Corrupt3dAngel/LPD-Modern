@@ -145,15 +145,17 @@ namespace LPD_Modern
 
         private void materialButton4_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                openFileDialog1.Title = "Open";
-                fastColoredTextBox1.Text = File.ReadAllText(openFileDialog1.FileName);
+                using (Stream s = File.Open(saveFileDialog1.FileName, FileMode.CreateNew))
+                using (StreamWriter sw = new StreamWriter(s))
+                {
+                    sw.Write(fastColoredTextBox1.Text);
+                }
             }
         }
-
-        private void materialButton8_Click(object sender, EventArgs e)
+            private void materialButton8_Click(object sender, EventArgs e)
         {
             // Set the desired line length for the output text (change this value as needed)
             const int lineLength = 20;
@@ -1205,7 +1207,7 @@ namespace LPD_Modern
                 using (Stream s = File.Open(saveFileDialog1.FileName, FileMode.CreateNew))
                 using (StreamWriter sw = new StreamWriter(s))
                 {
-                    sw.Write(fastColoredTextBox3.Text);
+                    sw.Write(fastColoredTextBox4.Text);
                 }
             }
         }
