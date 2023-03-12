@@ -580,7 +580,7 @@ namespace LPD_Modern
 
         private void flatTextBox1_TextChanged(object sender, EventArgs e)
         {
-
+            flatTextBox1.ReadOnly = true;
         }
 
         private void materialButton1_Click(object sender, EventArgs e)
@@ -1066,7 +1066,7 @@ namespace LPD_Modern
 
         private void flatTextBox23_TextChanged(object sender, EventArgs e)
         {
-
+            flatTextBox23.ReadOnly = true;
         }
 
         private void materialButton35_Click(object sender, EventArgs e)
@@ -1246,6 +1246,116 @@ namespace LPD_Modern
 
             // Set the text of the fastColoredTextBox3 control to the reversed text
             fastColoredTextBox2.Text = reversedText;
+        }
+
+        private void flatTextBox2_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox2.ReadOnly = true;
+        }
+
+        private void flatTextBox3_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox3.ReadOnly = true;
+        }
+
+        private void flatTextBox4_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox4.ReadOnly = true;
+        }
+
+        private void flatTextBox5_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox5.ReadOnly = true;
+        }
+
+        private void flatTextBox6_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox6.ReadOnly = true;
+        }
+
+        private void flatTextBox7_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox7.ReadOnly = true;
+        }
+
+        private void flatTextBox8_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox8.ReadOnly = true;
+        }
+
+        private void flatTextBox9_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox9.ReadOnly = true;
+        }
+
+        private void flatTextBox10_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox10.ReadOnly = true;
+        }
+
+        private void flatTextBox11_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox11.ReadOnly = true;
+        }
+
+        private void flatTextBox12_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox12.ReadOnly = true;
+        }
+
+        private void flatTextBox13_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox13.ReadOnly = true;
+        }
+
+        private void flatTextBox14_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox14.ReadOnly = true;
+        }
+
+        private void flatTextBox15_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox15.ReadOnly = true;
+        }
+
+        private void flatTextBox16_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox16.ReadOnly = true;
+        }
+
+        private void flatTextBox17_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox17.ReadOnly = true;
+        }
+
+        private void flatTextBox18_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox18.ReadOnly = true;
+        }
+
+        private void flatTextBox22_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox22.ReadOnly = true;
+        }
+
+        private void flatTextBox21_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox21.ReadOnly = true;
+        }
+
+        private void flatTextBox20_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox20.ReadOnly = true;
+        }
+
+        private void flatTextBox19_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox19.ReadOnly = true;
+        }
+
+        private void flatTextBox24_TextChanged(object sender, EventArgs e)
+        {
+            flatTextBox24.ReadOnly = true;
         }
     }
 }

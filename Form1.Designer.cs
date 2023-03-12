@@ -169,20 +169,16 @@
             this.kryptonPalette1.BasePaletteMode = Krypton.Toolkit.PaletteMode.Office365BlackDarkMode;
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Rounding = 12F;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.ButtonEdgeInset = 10;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
             this.kryptonPalette1.PanelStyles.PanelCommon.StateCommon.ColorAlign = Krypton.Toolkit.PaletteRectangleAlign.Local;
-            this.kryptonPalette1.PanelStyles.PanelCommon.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             // 
             // panel1
             // 
@@ -603,7 +599,7 @@
         '\"',
         '\'',
         '\''};
-            this.fastColoredTextBox2.AutoScrollMinSize = new System.Drawing.Size(331, 18);
+            this.fastColoredTextBox2.AutoScrollMinSize = new System.Drawing.Size(302, 18);
             this.fastColoredTextBox2.BackBrush = null;
             this.fastColoredTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.fastColoredTextBox2.BookmarkColor = System.Drawing.Color.Blue;
@@ -828,6 +824,7 @@
             this.flatTextBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox18.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox18.UseSystemPasswordChar = false;
+            this.flatTextBox18.TextChanged += new System.EventHandler(this.flatTextBox18_TextChanged);
             // 
             // flatTextBox17
             // 
@@ -845,6 +842,7 @@
             this.flatTextBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox17.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox17.UseSystemPasswordChar = false;
+            this.flatTextBox17.TextChanged += new System.EventHandler(this.flatTextBox17_TextChanged);
             // 
             // flatTextBox16
             // 
@@ -862,6 +860,7 @@
             this.flatTextBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox16.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox16.UseSystemPasswordChar = false;
+            this.flatTextBox16.TextChanged += new System.EventHandler(this.flatTextBox16_TextChanged);
             // 
             // flatTextBox15
             // 
@@ -879,6 +878,7 @@
             this.flatTextBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox15.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox15.UseSystemPasswordChar = false;
+            this.flatTextBox15.TextChanged += new System.EventHandler(this.flatTextBox15_TextChanged);
             // 
             // flatTextBox14
             // 
@@ -896,6 +896,7 @@
             this.flatTextBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox14.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox14.UseSystemPasswordChar = false;
+            this.flatTextBox14.TextChanged += new System.EventHandler(this.flatTextBox14_TextChanged);
             // 
             // flatTextBox13
             // 
@@ -913,6 +914,7 @@
             this.flatTextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox13.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox13.UseSystemPasswordChar = false;
+            this.flatTextBox13.TextChanged += new System.EventHandler(this.flatTextBox13_TextChanged);
             // 
             // flatTextBox12
             // 
@@ -930,6 +932,7 @@
             this.flatTextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox12.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox12.UseSystemPasswordChar = false;
+            this.flatTextBox12.TextChanged += new System.EventHandler(this.flatTextBox12_TextChanged);
             // 
             // flatTextBox11
             // 
@@ -947,6 +950,7 @@
             this.flatTextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox11.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox11.UseSystemPasswordChar = false;
+            this.flatTextBox11.TextChanged += new System.EventHandler(this.flatTextBox11_TextChanged);
             // 
             // flatTextBox10
             // 
@@ -964,6 +968,7 @@
             this.flatTextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox10.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox10.UseSystemPasswordChar = false;
+            this.flatTextBox10.TextChanged += new System.EventHandler(this.flatTextBox10_TextChanged);
             // 
             // flatTextBox9
             // 
@@ -981,6 +986,7 @@
             this.flatTextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox9.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox9.UseSystemPasswordChar = false;
+            this.flatTextBox9.TextChanged += new System.EventHandler(this.flatTextBox9_TextChanged);
             // 
             // flatTextBox8
             // 
@@ -998,6 +1004,7 @@
             this.flatTextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox8.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox8.UseSystemPasswordChar = false;
+            this.flatTextBox8.TextChanged += new System.EventHandler(this.flatTextBox8_TextChanged);
             // 
             // flatTextBox7
             // 
@@ -1015,6 +1022,7 @@
             this.flatTextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox7.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox7.UseSystemPasswordChar = false;
+            this.flatTextBox7.TextChanged += new System.EventHandler(this.flatTextBox7_TextChanged);
             // 
             // flatTextBox6
             // 
@@ -1032,6 +1040,7 @@
             this.flatTextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox6.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox6.UseSystemPasswordChar = false;
+            this.flatTextBox6.TextChanged += new System.EventHandler(this.flatTextBox6_TextChanged);
             // 
             // flatTextBox5
             // 
@@ -1049,6 +1058,7 @@
             this.flatTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox5.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox5.UseSystemPasswordChar = false;
+            this.flatTextBox5.TextChanged += new System.EventHandler(this.flatTextBox5_TextChanged);
             // 
             // flatTextBox4
             // 
@@ -1066,6 +1076,7 @@
             this.flatTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox4.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox4.UseSystemPasswordChar = false;
+            this.flatTextBox4.TextChanged += new System.EventHandler(this.flatTextBox4_TextChanged);
             // 
             // flatTextBox3
             // 
@@ -1083,6 +1094,7 @@
             this.flatTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox3.UseSystemPasswordChar = false;
+            this.flatTextBox3.TextChanged += new System.EventHandler(this.flatTextBox3_TextChanged);
             // 
             // flatTextBox2
             // 
@@ -1100,6 +1112,7 @@
             this.flatTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox2.UseSystemPasswordChar = false;
+            this.flatTextBox2.TextChanged += new System.EventHandler(this.flatTextBox2_TextChanged);
             // 
             // flatTextBox1
             // 
@@ -1161,6 +1174,7 @@
             this.flatTextBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox24.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox24.UseSystemPasswordChar = false;
+            this.flatTextBox24.TextChanged += new System.EventHandler(this.flatTextBox24_TextChanged);
             // 
             // flatTextBox19
             // 
@@ -1178,6 +1192,7 @@
             this.flatTextBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox19.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox19.UseSystemPasswordChar = false;
+            this.flatTextBox19.TextChanged += new System.EventHandler(this.flatTextBox19_TextChanged);
             // 
             // flatTextBox20
             // 
@@ -1195,6 +1210,7 @@
             this.flatTextBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox20.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox20.UseSystemPasswordChar = false;
+            this.flatTextBox20.TextChanged += new System.EventHandler(this.flatTextBox20_TextChanged);
             // 
             // flatTextBox21
             // 
@@ -1212,6 +1228,7 @@
             this.flatTextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox21.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox21.UseSystemPasswordChar = false;
+            this.flatTextBox21.TextChanged += new System.EventHandler(this.flatTextBox21_TextChanged);
             // 
             // flatTextBox22
             // 
@@ -1229,6 +1246,7 @@
             this.flatTextBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.flatTextBox22.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.flatTextBox22.UseSystemPasswordChar = false;
+            this.flatTextBox22.TextChanged += new System.EventHandler(this.flatTextBox22_TextChanged);
             // 
             // flatTextBox23
             // 
@@ -1387,7 +1405,7 @@
         '\"',
         '\'',
         '\''};
-            this.fastColoredTextBox3.AutoScrollMinSize = new System.Drawing.Size(252, 18);
+            this.fastColoredTextBox3.AutoScrollMinSize = new System.Drawing.Size(281, 18);
             this.fastColoredTextBox3.BackBrush = null;
             this.fastColoredTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.fastColoredTextBox3.BookmarkColor = System.Drawing.Color.Blue;
@@ -2205,7 +2223,6 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.HighQuality;
-            this.StateCommon.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.StateCommon.Border.Rounding = 12F;
             this.Text = "LPDecrypt";
             this.Load += new System.EventHandler(this.Form1_Load);
