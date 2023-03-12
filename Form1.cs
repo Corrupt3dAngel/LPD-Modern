@@ -530,6 +530,9 @@ namespace LPD_Modern
             // Calculate the median letter F repeat distance of the input in parallel
             double medLetterFRepeatDistance = await Task.Run(() => Cryptanalysis.CalculateMedianLetterFRepeatDistance(userInput));
 
+            // Calculate the median letter F repeat distance of the input in parallel
+            double ShannonsEntropy = await Task.Run(() => Cryptanalysis.ShannonEntropy(userInput));
+
             // Calculate the bigram frequency of the input in parallel
             Dictionary<string, int> bigramFrequency2 = await Task.Run(() => Cryptanalysis.GetBigramFrequency(userInput));
 
@@ -561,23 +564,24 @@ namespace LPD_Modern
 
             // Display the results in the appropriate textboxes with identifiers
             flatTextBox1.Text = "Entropy: " + entropy.ToString();
+            flatTextBox25.Text = "Shannon's Entropy: " + ShannonsEntropy.ToString();
             flatTextBox4.Text = "IoC: " + ioc.ToString();
             flatTextBox7.Text = "Bigram Ratio: " + bigramRatio.ToString();
             flatTextBox10.Text = "Bigram Peak: " + bigramPeak.ToString();
             flatTextBox13.Text = "Bigram Low: " + bigramLow.ToString();
-            flatTextBox16.Text = "Same-GP Ratio: " + sameGPRatio.ToString();
+            flatTextBox15.Text = "Same-GP Ratio: " + sameGPRatio.ToString();
             flatTextBox2.Text = "Average Letter Distance: " + avgLetterDistance.ToString();
             flatTextBox5.Text = "Average Rune Repeat Distance: " + avgRuneRepeatDistance.ToString();
             flatTextBox8.Text = "Average Dbl/Double Rune Distance: " + avgDblRuneDistance.ToString();
             flatTextBox11.Text = "Average Letter X Repeat Distance: " + avgLetterXRepeatDistance.ToString();
             flatTextBox14.Text = "Average Letter F Repeat Distance: " + avgLetterFRepeatDistance.ToString();
-            flatTextBox17.Text = "Bigram Frequency: " + string.Join(", ", bigramFrequencySorted.Select(pair => $"{pair.Key}:{pair.Value}"));
+            flatTextBox18.Text = "Bigram Frequency: " + string.Join(", ", bigramFrequencySorted.Select(pair => $"{pair.Key}:{pair.Value}"));
             flatTextBox3.Text = "Trigram Frequency: " + string.Join(", ", trigramFrequencySorted.Select(pair => $"{pair.Key}:{pair.Value}"));
             flatTextBox6.Text = "Letter Frequency: " + string.Join(", ", letterFrequencySorted.Select(pair => $"{pair.Key}:{pair.Value}"));
             flatTextBox9.Text = "Repeated Grams (length 3): " + string.Join(", ", repeatedGramsSorted.Select(pair => $"{pair.Key}:{pair.Value}"));
             flatTextBox12.Text = "Similar Grams (length 3): " + string.Join(", ", similarGramsSorted.Select(pair => $"{pair.Key}:{pair.Value}"));
-            flatTextBox15.Text = "Trigram Ratio: " + trigramRatio.ToString();
-            flatTextBox18.Text = "Median Letter F Repeat Distance: " + medLetterFRepeatDistance.ToString();
+            flatTextBox16.Text = "Trigram Ratio: " + trigramRatio.ToString();
+            flatTextBox17.Text = "Median Letter F Repeat Distance: " + medLetterFRepeatDistance.ToString();
         }
 
         private void flatTextBox1_TextChanged(object sender, EventArgs e)

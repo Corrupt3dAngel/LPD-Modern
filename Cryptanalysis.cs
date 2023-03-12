@@ -84,6 +84,20 @@ namespace LPD_Modern
             // Return the calculated entropy value
             return entropy;
         }
+        public static double ShannonEntropy(string input)
+        {
+            int inputLength = input.Length;
+            HashSet<char> uniqueChars = new HashSet<char>(input);
+
+            var charFrequencies = uniqueChars.Select(c => new {
+                Character = c,
+                Frequency = (double)input.Count(ch => ch == c) / inputLength
+            });
+
+            double entropy = charFrequencies.Sum(cf => -cf.Frequency * Math.Log(cf.Frequency, 2));
+
+            return entropy;
+        }
 
         public static Dictionary<string, int> GetBigramFrequency(string userInput)
         {

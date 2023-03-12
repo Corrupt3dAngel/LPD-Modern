@@ -149,6 +149,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.flatTextBox25 = new FlatUI.FlatTextBox();
             this.panel1.SuspendLayout();
             this.tabPage_Modern_Black1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -357,7 +358,7 @@
             this.materialButton6.Depth = 0;
             this.materialButton6.HighEmphasis = true;
             this.materialButton6.Icon = null;
-            this.materialButton6.Location = new System.Drawing.Point(570, 376);
+            this.materialButton6.Location = new System.Drawing.Point(572, 376);
             this.materialButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton6.Name = "materialButton6";
@@ -651,7 +652,7 @@
             this.materialButton23.Depth = 0;
             this.materialButton23.HighEmphasis = true;
             this.materialButton23.Icon = null;
-            this.materialButton23.Location = new System.Drawing.Point(570, 376);
+            this.materialButton23.Location = new System.Drawing.Point(572, 376);
             this.materialButton23.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton23.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton23.Name = "materialButton23";
@@ -784,6 +785,7 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.tabPage3.Controls.Add(this.flatTextBox25);
             this.tabPage3.Controls.Add(this.flatTextBox18);
             this.tabPage3.Controls.Add(this.flatTextBox17);
             this.tabPage3.Controls.Add(this.flatTextBox16);
@@ -849,7 +851,7 @@
             this.flatTextBox16.BackColor = System.Drawing.Color.Transparent;
             this.flatTextBox16.FocusOnHover = false;
             this.flatTextBox16.Hint = "";
-            this.flatTextBox16.Location = new System.Drawing.Point(3, 178);
+            this.flatTextBox16.Location = new System.Drawing.Point(4, 213);
             this.flatTextBox16.MaxLength = 32767;
             this.flatTextBox16.Multiline = false;
             this.flatTextBox16.Name = "flatTextBox16";
@@ -903,7 +905,7 @@
             this.flatTextBox13.BackColor = System.Drawing.Color.Transparent;
             this.flatTextBox13.FocusOnHover = false;
             this.flatTextBox13.Hint = "";
-            this.flatTextBox13.Location = new System.Drawing.Point(3, 143);
+            this.flatTextBox13.Location = new System.Drawing.Point(4, 178);
             this.flatTextBox13.MaxLength = 32767;
             this.flatTextBox13.Multiline = false;
             this.flatTextBox13.Name = "flatTextBox13";
@@ -957,7 +959,7 @@
             this.flatTextBox10.BackColor = System.Drawing.Color.Transparent;
             this.flatTextBox10.FocusOnHover = false;
             this.flatTextBox10.Hint = "";
-            this.flatTextBox10.Location = new System.Drawing.Point(3, 108);
+            this.flatTextBox10.Location = new System.Drawing.Point(4, 143);
             this.flatTextBox10.MaxLength = 32767;
             this.flatTextBox10.Multiline = false;
             this.flatTextBox10.Name = "flatTextBox10";
@@ -1011,7 +1013,7 @@
             this.flatTextBox7.BackColor = System.Drawing.Color.Transparent;
             this.flatTextBox7.FocusOnHover = false;
             this.flatTextBox7.Hint = "";
-            this.flatTextBox7.Location = new System.Drawing.Point(3, 73);
+            this.flatTextBox7.Location = new System.Drawing.Point(4, 108);
             this.flatTextBox7.MaxLength = 32767;
             this.flatTextBox7.Multiline = false;
             this.flatTextBox7.Name = "flatTextBox7";
@@ -1065,7 +1067,7 @@
             this.flatTextBox4.BackColor = System.Drawing.Color.Transparent;
             this.flatTextBox4.FocusOnHover = false;
             this.flatTextBox4.Hint = "";
-            this.flatTextBox4.Location = new System.Drawing.Point(3, 38);
+            this.flatTextBox4.Location = new System.Drawing.Point(4, 73);
             this.flatTextBox4.MaxLength = 32767;
             this.flatTextBox4.Multiline = false;
             this.flatTextBox4.Name = "flatTextBox4";
@@ -1659,7 +1661,7 @@
             this.materialButton17.Depth = 0;
             this.materialButton17.HighEmphasis = true;
             this.materialButton17.Icon = null;
-            this.materialButton17.Location = new System.Drawing.Point(573, 377);
+            this.materialButton17.Location = new System.Drawing.Point(572, 376);
             this.materialButton17.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton17.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton17.Name = "materialButton17";
@@ -1680,7 +1682,7 @@
             this.materialButton18.Depth = 0;
             this.materialButton18.HighEmphasis = true;
             this.materialButton18.Icon = null;
-            this.materialButton18.Location = new System.Drawing.Point(460, 377);
+            this.materialButton18.Location = new System.Drawing.Point(459, 376);
             this.materialButton18.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton18.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton18.Name = "materialButton18";
@@ -1701,7 +1703,7 @@
             this.materialButton19.Depth = 0;
             this.materialButton19.HighEmphasis = true;
             this.materialButton19.Icon = null;
-            this.materialButton19.Location = new System.Drawing.Point(347, 376);
+            this.materialButton19.Location = new System.Drawing.Point(346, 376);
             this.materialButton19.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton19.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton19.Name = "materialButton19";
@@ -2204,6 +2206,23 @@
             this.label8.TabIndex = 8;
             this.label8.Text = "UI/Design -";
             // 
+            // flatTextBox25
+            // 
+            this.flatTextBox25.BackColor = System.Drawing.Color.Transparent;
+            this.flatTextBox25.FocusOnHover = false;
+            this.flatTextBox25.Hint = "";
+            this.flatTextBox25.Location = new System.Drawing.Point(3, 38);
+            this.flatTextBox25.MaxLength = 32767;
+            this.flatTextBox25.Multiline = false;
+            this.flatTextBox25.Name = "flatTextBox25";
+            this.flatTextBox25.ReadOnly = false;
+            this.flatTextBox25.Size = new System.Drawing.Size(221, 29);
+            this.flatTextBox25.TabIndex = 21;
+            this.flatTextBox25.Text = "flatTextBox25";
+            this.flatTextBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.flatTextBox25.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.flatTextBox25.UseSystemPasswordChar = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2367,6 +2386,7 @@
         private MaterialSkin.Controls.MaterialButton materialButton36;
         private MaterialSkin.Controls.MaterialButton materialButton35;
         private FlatUI.FlatTextBox flatTextBox24;
+        private FlatUI.FlatTextBox flatTextBox25;
     }
 }
 
