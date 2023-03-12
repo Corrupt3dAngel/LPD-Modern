@@ -5,3 +5,7 @@ LPDecrypt is my crappy software application that specializes in decrypting the c
 Known Issues
 
 There are key wrapping issues when using the Decrypt button with the Caesar cipher shift, which can impact the accuracy of decryption. Limited accuracy in Cryptoanalysis. Missing rune in Cryptoanalysis (potentially). The use of numbers and special characters with a key is currently prohibited.
+
+Miscellaneous
+
+Although the new UI was created in a relatively short timeframe of about 5-6 hours, there is always room for improvement. However, it is still a significant upgrade from the original application and is more visually appealing.
