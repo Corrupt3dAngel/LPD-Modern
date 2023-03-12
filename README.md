@@ -8,4 +8,4 @@ There are key wrapping issues when using the Decrypt button with the Caesar ciph
 
 Miscellaneous
 
-Although the new Application was created in a relatively short timeframe of about 5-6 hours, there is always room for improvement. However, it is still a significant upgrade from the original application and is more visually appealing.
+Although the new Application was created in a relatively short timeframe of about 6-7 hours, there is always room for improvement. However, it is still a significant upgrade from the original application and is more visually appealing.
