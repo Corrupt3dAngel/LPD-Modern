@@ -4,7 +4,7 @@ LPDecrypt is my crappy software application that specializes in decrypting the c
 
 Known Issues
 
-There are key wrapping issues when using the Decrypt button with the Caesar cipher shift, which can impact the accuracy of decryption. Limited accuracy in Cryptoanalysis. The use of numbers and special characters with a key is currently prohibited. There is a problem with the formatting of the cryptanalysis output, as the newline character ("\n") is causing it to display a blank frequency alongside the other actual frequencies. Assuming that the newline character ("\n") is not a part of the plaintext, its presence in the cryptanalysis output should not affect the accuracy of the analysis.
+There are key wrapping issues when using the Decrypt button with the Caesar cipher shift, which can impact the accuracy of decryption. Limited accuracy in Cryptoanalysis. The use of numbers and special characters with a key is currently prohibited.
 
 Potential future improvements (If I feel like it. . .)
 
