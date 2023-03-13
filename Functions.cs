@@ -231,7 +231,68 @@ namespace LPD_Modern
 
             }
         }
+        /*
+         * The TranspositionDecrypt function created by alekhya63 yields very similar results to my TranspositionCipher function.
+         * 
+        private static int[] IndexesPadCharacter(string key)
+        {
+            int LengthofKey = key.Length;
+            int[] countOfIndexes = new int[LengthofKey];
+            List<KeyValuePair<int, char>> setKey = new List<KeyValuePair<int, char>>();
+            int position;
 
+            for (position = 0; position < LengthofKey; ++position)
+                setKey.Add(new KeyValuePair<int, char>(position, key[position]));
+
+            setKey.Sort(
+                delegate (KeyValuePair<int, char> pair1, KeyValuePair<int, char> pair2) {
+                    return pair1.Value.CompareTo(pair2.Value);
+                }
+            );
+
+            for (position = 0; position < LengthofKey; ++position)
+                countOfIndexes[setKey[position].Key] = position;
+
+            return countOfIndexes;
+        }
+        
+        public static string TranspositionDecrypt(string cipherText, string key)
+        {
+            StringBuilder plainText = new StringBuilder();
+            int countOfChars = cipherText.Length;
+            int matrixColumns = (int)Math.Ceiling((double)countOfChars / key.Length);
+            int matrixRows = key.Length;
+            char[,] charactersOfRows = new char[matrixRows, matrixColumns];
+            char[,] charactersOfColumns = new char[matrixColumns, matrixRows];
+            char[,] columnCharsUnsorted = new char[matrixColumns, matrixRows];
+            int currentRowOfMatrix, currentColumnOfMatrix, i, j;
+            int[] Indexes = IndexesPadCharacter(key);
+
+            for (i = 0; i < countOfChars; ++i)
+            {
+                currentRowOfMatrix = i / matrixColumns;
+                currentColumnOfMatrix = i % matrixColumns;
+                charactersOfRows[currentRowOfMatrix, currentColumnOfMatrix] = cipherText[i];
+            }
+
+            for (i = 0; i < matrixRows; ++i)
+                for (j = 0; j < matrixColumns; ++j)
+                    charactersOfColumns[j, i] = charactersOfRows[i, j];
+
+            for (i = 0; i < matrixColumns; ++i)
+                for (j = 0; j < matrixRows; ++j)
+                    columnCharsUnsorted[i, j] = charactersOfColumns[i, Indexes[j]];
+
+            for (i = 0; i < countOfChars; ++i)
+            {
+                currentRowOfMatrix = i / matrixRows;
+                currentColumnOfMatrix = i % matrixRows;
+                plainText.Append(columnCharsUnsorted[currentRowOfMatrix, currentColumnOfMatrix]);
+            }
+            //convert plaintext to string
+            return plainText.ToString();
+        }
+        */
         public static char[,] TransposeGrid(char[,] grid, int[] key)
         {
             int numRows = grid.GetLength(0);

@@ -16,6 +16,12 @@ namespace LPD_Modern
             // Loop through each character in the user input
             foreach (char c in userInput)
             {
+                // If the current character is not a letter, skip it
+                if (!char.IsLetter(c))
+                {
+                    continue;
+                }
+
                 // If the current character already exists in the dictionary, increment its frequency
                 if (runeFrequency.ContainsKey(c))
                 {
@@ -103,7 +109,6 @@ namespace LPD_Modern
             // return the Shannon entropy
             return entropy;
         }
-
         public static Dictionary<string, int> GetBigramFrequency(string userInput)
         {
             // Create a new dictionary to store the frequency of each bigram in the user input
@@ -234,7 +239,7 @@ namespace LPD_Modern
                 string runePair = "";
 
                 // Check if the frequency of the current rune is greater than 1 in the runeFrequency dictionary
-                if (runeFrequency[userInput[i]] > 1)
+                if (runeFrequency.ContainsKey(userInput[i]) && runeFrequency[userInput[i]] > 1)
                 {
                     // Add the current rune to the runePair string twice
                     runePair += userInput[i];

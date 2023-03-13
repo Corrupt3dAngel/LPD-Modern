@@ -111,6 +111,18 @@
             this.materialButton20 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton21 = new MaterialSkin.Controls.MaterialButton();
             this.listBox3 = new System.Windows.Forms.ListBox();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.flatTextBox26 = new FlatUI.FlatTextBox();
+            this.materialButton14 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton39 = new MaterialSkin.Controls.MaterialButton();
+            this.fastColoredTextBox5 = new FastColoredTextBoxNS.FastColoredTextBox();
+            this.materialButton40 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton41 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton42 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton43 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton44 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton46 = new MaterialSkin.Controls.MaterialButton();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.checkBox41 = new System.Windows.Forms.CheckBox();
             this.checkBox16 = new System.Windows.Forms.CheckBox();
@@ -150,18 +162,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.materialButton14 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton39 = new MaterialSkin.Controls.MaterialButton();
-            this.fastColoredTextBox5 = new FastColoredTextBoxNS.FastColoredTextBox();
-            this.materialButton40 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton41 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton42 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton43 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton44 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton46 = new MaterialSkin.Controls.MaterialButton();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.flatTextBox26 = new FlatUI.FlatTextBox();
             this.panel1.SuspendLayout();
             this.tabPage_Modern_Black1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -173,10 +173,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox3)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox4)).BeginInit();
-            this.tabPage6.SuspendLayout();
-            this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox5)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -524,7 +524,7 @@
             this.fastColoredTextBox1.CharWidth = 10;
             this.fastColoredTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fastColoredTextBox1.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.fastColoredTextBox1.Font = new System.Drawing.Font("Courier New", 12F);
+            this.fastColoredTextBox1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold);
             this.fastColoredTextBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.fastColoredTextBox1.IndentBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.fastColoredTextBox1.IsReplaceMode = false;
@@ -1802,6 +1802,261 @@
             this.listBox3.TabIndex = 12;
             this.listBox3.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
             // 
+            // tabPage8
+            // 
+            this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.tabPage8.Controls.Add(this.flatTextBox26);
+            this.tabPage8.Controls.Add(this.materialButton14);
+            this.tabPage8.Controls.Add(this.materialButton39);
+            this.tabPage8.Controls.Add(this.fastColoredTextBox5);
+            this.tabPage8.Controls.Add(this.materialButton40);
+            this.tabPage8.Controls.Add(this.materialButton41);
+            this.tabPage8.Controls.Add(this.materialButton42);
+            this.tabPage8.Controls.Add(this.materialButton43);
+            this.tabPage8.Controls.Add(this.materialButton44);
+            this.tabPage8.Controls.Add(this.materialButton46);
+            this.tabPage8.Controls.Add(this.listBox2);
+            this.tabPage8.Location = new System.Drawing.Point(149, 4);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(684, 419);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Transposition";
+            // 
+            // flatTextBox26
+            // 
+            this.flatTextBox26.BackColor = System.Drawing.Color.Transparent;
+            this.flatTextBox26.FocusOnHover = false;
+            this.flatTextBox26.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatTextBox26.Hint = "";
+            this.flatTextBox26.Location = new System.Drawing.Point(576, 380);
+            this.flatTextBox26.MaxLength = 32767;
+            this.flatTextBox26.Multiline = false;
+            this.flatTextBox26.Name = "flatTextBox26";
+            this.flatTextBox26.ReadOnly = false;
+            this.flatTextBox26.Size = new System.Drawing.Size(105, 29);
+            this.flatTextBox26.TabIndex = 36;
+            this.flatTextBox26.Text = "Enter Key";
+            this.flatTextBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.flatTextBox26.TextColor = System.Drawing.Color.White;
+            this.flatTextBox26.UseSystemPasswordChar = false;
+            this.flatTextBox26.TextChanged += new System.EventHandler(this.flatTextBox26_TextChanged);
+            // 
+            // materialButton14
+            // 
+            this.materialButton14.AutoSize = false;
+            this.materialButton14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton14.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton14.Depth = 0;
+            this.materialButton14.HighEmphasis = true;
+            this.materialButton14.Icon = null;
+            this.materialButton14.Location = new System.Drawing.Point(627, 12);
+            this.materialButton14.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton14.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton14.Name = "materialButton14";
+            this.materialButton14.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton14.Size = new System.Drawing.Size(55, 31);
+            this.materialButton14.TabIndex = 35;
+            this.materialButton14.Text = "Prime";
+            this.materialButton14.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton14.UseAccentColor = false;
+            this.materialButton14.UseVisualStyleBackColor = true;
+            this.materialButton14.Click += new System.EventHandler(this.materialButton14_Click);
+            // 
+            // materialButton39
+            // 
+            this.materialButton39.AutoSize = false;
+            this.materialButton39.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton39.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton39.Depth = 0;
+            this.materialButton39.HighEmphasis = true;
+            this.materialButton39.Icon = null;
+            this.materialButton39.Location = new System.Drawing.Point(545, 13);
+            this.materialButton39.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton39.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton39.Name = "materialButton39";
+            this.materialButton39.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton39.Size = new System.Drawing.Size(74, 31);
+            this.materialButton39.TabIndex = 34;
+            this.materialButton39.Text = "Numeric";
+            this.materialButton39.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton39.UseAccentColor = false;
+            this.materialButton39.UseVisualStyleBackColor = true;
+            this.materialButton39.Click += new System.EventHandler(this.materialButton39_Click);
+            // 
+            // fastColoredTextBox5
+            // 
+            this.fastColoredTextBox5.AutoCompleteBracketsList = new char[] {
+        '(',
+        ')',
+        '{',
+        '}',
+        '[',
+        ']',
+        '\"',
+        '\"',
+        '\'',
+        '\''};
+            this.fastColoredTextBox5.AutoScrollMinSize = new System.Drawing.Size(581, 18);
+            this.fastColoredTextBox5.BackBrush = null;
+            this.fastColoredTextBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.fastColoredTextBox5.BookmarkColor = System.Drawing.Color.Blue;
+            this.fastColoredTextBox5.CharHeight = 18;
+            this.fastColoredTextBox5.CharWidth = 10;
+            this.fastColoredTextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fastColoredTextBox5.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.fastColoredTextBox5.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold);
+            this.fastColoredTextBox5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.fastColoredTextBox5.IndentBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.fastColoredTextBox5.IsReplaceMode = false;
+            this.fastColoredTextBox5.Location = new System.Drawing.Point(0, 0);
+            this.fastColoredTextBox5.Name = "fastColoredTextBox5";
+            this.fastColoredTextBox5.Paddings = new System.Windows.Forms.Padding(0);
+            this.fastColoredTextBox5.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.fastColoredTextBox5.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("fastColoredTextBox5.ServiceColors")));
+            this.fastColoredTextBox5.Size = new System.Drawing.Size(541, 367);
+            this.fastColoredTextBox5.TabIndex = 33;
+            this.fastColoredTextBox5.Text = "Columnar Transposition / write by rows, read by colunms";
+            this.fastColoredTextBox5.Zoom = 100;
+            // 
+            // materialButton40
+            // 
+            this.materialButton40.AutoSize = false;
+            this.materialButton40.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton40.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton40.Depth = 0;
+            this.materialButton40.HighEmphasis = true;
+            this.materialButton40.Icon = null;
+            this.materialButton40.Location = new System.Drawing.Point(545, 54);
+            this.materialButton40.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton40.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton40.Name = "materialButton40";
+            this.materialButton40.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton40.Size = new System.Drawing.Size(136, 31);
+            this.materialButton40.TabIndex = 32;
+            this.materialButton40.Text = "Refresh Pages";
+            this.materialButton40.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton40.UseAccentColor = false;
+            this.materialButton40.UseVisualStyleBackColor = true;
+            this.materialButton40.Click += new System.EventHandler(this.materialButton40_Click);
+            // 
+            // materialButton41
+            // 
+            this.materialButton41.AutoSize = false;
+            this.materialButton41.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton41.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton41.Depth = 0;
+            this.materialButton41.HighEmphasis = true;
+            this.materialButton41.Icon = null;
+            this.materialButton41.Location = new System.Drawing.Point(117, 376);
+            this.materialButton41.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton41.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton41.Name = "materialButton41";
+            this.materialButton41.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton41.Size = new System.Drawing.Size(107, 36);
+            this.materialButton41.TabIndex = 31;
+            this.materialButton41.Text = "Clear";
+            this.materialButton41.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton41.UseAccentColor = false;
+            this.materialButton41.UseVisualStyleBackColor = true;
+            this.materialButton41.Click += new System.EventHandler(this.materialButton41_Click);
+            // 
+            // materialButton42
+            // 
+            this.materialButton42.AutoSize = false;
+            this.materialButton42.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton42.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton42.Depth = 0;
+            this.materialButton42.HighEmphasis = true;
+            this.materialButton42.Icon = null;
+            this.materialButton42.Location = new System.Drawing.Point(462, 376);
+            this.materialButton42.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton42.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton42.Name = "materialButton42";
+            this.materialButton42.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton42.Size = new System.Drawing.Size(107, 36);
+            this.materialButton42.TabIndex = 30;
+            this.materialButton42.Text = "Atbash";
+            this.materialButton42.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton42.UseAccentColor = false;
+            this.materialButton42.UseVisualStyleBackColor = true;
+            this.materialButton42.Click += new System.EventHandler(this.materialButton42_Click);
+            // 
+            // materialButton43
+            // 
+            this.materialButton43.AutoSize = false;
+            this.materialButton43.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton43.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton43.Depth = 0;
+            this.materialButton43.HighEmphasis = true;
+            this.materialButton43.Icon = null;
+            this.materialButton43.Location = new System.Drawing.Point(347, 376);
+            this.materialButton43.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton43.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton43.Name = "materialButton43";
+            this.materialButton43.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton43.Size = new System.Drawing.Size(107, 36);
+            this.materialButton43.TabIndex = 29;
+            this.materialButton43.Text = "Save File";
+            this.materialButton43.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton43.UseAccentColor = false;
+            this.materialButton43.UseVisualStyleBackColor = true;
+            this.materialButton43.Click += new System.EventHandler(this.materialButton43_Click);
+            // 
+            // materialButton44
+            // 
+            this.materialButton44.AutoSize = false;
+            this.materialButton44.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton44.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton44.Depth = 0;
+            this.materialButton44.HighEmphasis = true;
+            this.materialButton44.Icon = null;
+            this.materialButton44.Location = new System.Drawing.Point(232, 376);
+            this.materialButton44.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton44.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton44.Name = "materialButton44";
+            this.materialButton44.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton44.Size = new System.Drawing.Size(107, 36);
+            this.materialButton44.TabIndex = 28;
+            this.materialButton44.Text = "Open File";
+            this.materialButton44.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton44.UseAccentColor = false;
+            this.materialButton44.UseVisualStyleBackColor = true;
+            this.materialButton44.Click += new System.EventHandler(this.materialButton44_Click);
+            // 
+            // materialButton46
+            // 
+            this.materialButton46.AutoSize = false;
+            this.materialButton46.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton46.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton46.Depth = 0;
+            this.materialButton46.HighEmphasis = true;
+            this.materialButton46.Icon = null;
+            this.materialButton46.Location = new System.Drawing.Point(2, 376);
+            this.materialButton46.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton46.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton46.Name = "materialButton46";
+            this.materialButton46.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton46.Size = new System.Drawing.Size(107, 36);
+            this.materialButton46.TabIndex = 26;
+            this.materialButton46.Text = "Decrypt";
+            this.materialButton46.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton46.UseAccentColor = false;
+            this.materialButton46.UseVisualStyleBackColor = true;
+            this.materialButton46.Click += new System.EventHandler(this.materialButton46_Click);
+            // 
+            // listBox2
+            // 
+            this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.listBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox2.ForeColor = System.Drawing.SystemColors.Window;
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(545, 90);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(137, 273);
+            this.listBox2.TabIndex = 25;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
+            // 
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
@@ -2238,260 +2493,6 @@
             this.label8.TabIndex = 8;
             this.label8.Text = "UI/Design -";
             // 
-            // tabPage8
-            // 
-            this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.tabPage8.Controls.Add(this.flatTextBox26);
-            this.tabPage8.Controls.Add(this.materialButton14);
-            this.tabPage8.Controls.Add(this.materialButton39);
-            this.tabPage8.Controls.Add(this.fastColoredTextBox5);
-            this.tabPage8.Controls.Add(this.materialButton40);
-            this.tabPage8.Controls.Add(this.materialButton41);
-            this.tabPage8.Controls.Add(this.materialButton42);
-            this.tabPage8.Controls.Add(this.materialButton43);
-            this.tabPage8.Controls.Add(this.materialButton44);
-            this.tabPage8.Controls.Add(this.materialButton46);
-            this.tabPage8.Controls.Add(this.listBox2);
-            this.tabPage8.Location = new System.Drawing.Point(149, 4);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(684, 419);
-            this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "Transposition";
-            // 
-            // materialButton14
-            // 
-            this.materialButton14.AutoSize = false;
-            this.materialButton14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton14.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton14.Depth = 0;
-            this.materialButton14.HighEmphasis = true;
-            this.materialButton14.Icon = null;
-            this.materialButton14.Location = new System.Drawing.Point(627, 12);
-            this.materialButton14.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton14.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton14.Name = "materialButton14";
-            this.materialButton14.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton14.Size = new System.Drawing.Size(55, 31);
-            this.materialButton14.TabIndex = 35;
-            this.materialButton14.Text = "Prime";
-            this.materialButton14.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton14.UseAccentColor = false;
-            this.materialButton14.UseVisualStyleBackColor = true;
-            this.materialButton14.Click += new System.EventHandler(this.materialButton14_Click);
-            // 
-            // materialButton39
-            // 
-            this.materialButton39.AutoSize = false;
-            this.materialButton39.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton39.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton39.Depth = 0;
-            this.materialButton39.HighEmphasis = true;
-            this.materialButton39.Icon = null;
-            this.materialButton39.Location = new System.Drawing.Point(545, 13);
-            this.materialButton39.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton39.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton39.Name = "materialButton39";
-            this.materialButton39.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton39.Size = new System.Drawing.Size(74, 31);
-            this.materialButton39.TabIndex = 34;
-            this.materialButton39.Text = "Numeric";
-            this.materialButton39.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton39.UseAccentColor = false;
-            this.materialButton39.UseVisualStyleBackColor = true;
-            this.materialButton39.Click += new System.EventHandler(this.materialButton39_Click);
-            // 
-            // fastColoredTextBox5
-            // 
-            this.fastColoredTextBox5.AutoCompleteBracketsList = new char[] {
-        '(',
-        ')',
-        '{',
-        '}',
-        '[',
-        ']',
-        '\"',
-        '\"',
-        '\'',
-        '\''};
-            this.fastColoredTextBox5.AutoScrollMinSize = new System.Drawing.Size(281, 18);
-            this.fastColoredTextBox5.BackBrush = null;
-            this.fastColoredTextBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.fastColoredTextBox5.BookmarkColor = System.Drawing.Color.Blue;
-            this.fastColoredTextBox5.CharHeight = 18;
-            this.fastColoredTextBox5.CharWidth = 10;
-            this.fastColoredTextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.fastColoredTextBox5.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.fastColoredTextBox5.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold);
-            this.fastColoredTextBox5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.fastColoredTextBox5.IndentBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.fastColoredTextBox5.IsReplaceMode = false;
-            this.fastColoredTextBox5.Location = new System.Drawing.Point(0, 0);
-            this.fastColoredTextBox5.Name = "fastColoredTextBox5";
-            this.fastColoredTextBox5.Paddings = new System.Windows.Forms.Padding(0);
-            this.fastColoredTextBox5.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.fastColoredTextBox5.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("fastColoredTextBox5.ServiceColors")));
-            this.fastColoredTextBox5.Size = new System.Drawing.Size(541, 367);
-            this.fastColoredTextBox5.TabIndex = 33;
-            this.fastColoredTextBox5.Text = "-- Made by CorruptedAngel";
-            this.fastColoredTextBox5.Zoom = 100;
-            // 
-            // materialButton40
-            // 
-            this.materialButton40.AutoSize = false;
-            this.materialButton40.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton40.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton40.Depth = 0;
-            this.materialButton40.HighEmphasis = true;
-            this.materialButton40.Icon = null;
-            this.materialButton40.Location = new System.Drawing.Point(545, 54);
-            this.materialButton40.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton40.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton40.Name = "materialButton40";
-            this.materialButton40.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton40.Size = new System.Drawing.Size(136, 31);
-            this.materialButton40.TabIndex = 32;
-            this.materialButton40.Text = "Refresh Pages";
-            this.materialButton40.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton40.UseAccentColor = false;
-            this.materialButton40.UseVisualStyleBackColor = true;
-            this.materialButton40.Click += new System.EventHandler(this.materialButton40_Click);
-            // 
-            // materialButton41
-            // 
-            this.materialButton41.AutoSize = false;
-            this.materialButton41.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton41.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton41.Depth = 0;
-            this.materialButton41.HighEmphasis = true;
-            this.materialButton41.Icon = null;
-            this.materialButton41.Location = new System.Drawing.Point(117, 376);
-            this.materialButton41.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton41.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton41.Name = "materialButton41";
-            this.materialButton41.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton41.Size = new System.Drawing.Size(107, 36);
-            this.materialButton41.TabIndex = 31;
-            this.materialButton41.Text = "Clear";
-            this.materialButton41.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton41.UseAccentColor = false;
-            this.materialButton41.UseVisualStyleBackColor = true;
-            this.materialButton41.Click += new System.EventHandler(this.materialButton41_Click);
-            // 
-            // materialButton42
-            // 
-            this.materialButton42.AutoSize = false;
-            this.materialButton42.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton42.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton42.Depth = 0;
-            this.materialButton42.HighEmphasis = true;
-            this.materialButton42.Icon = null;
-            this.materialButton42.Location = new System.Drawing.Point(462, 376);
-            this.materialButton42.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton42.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton42.Name = "materialButton42";
-            this.materialButton42.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton42.Size = new System.Drawing.Size(107, 36);
-            this.materialButton42.TabIndex = 30;
-            this.materialButton42.Text = "Atbash";
-            this.materialButton42.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton42.UseAccentColor = false;
-            this.materialButton42.UseVisualStyleBackColor = true;
-            this.materialButton42.Click += new System.EventHandler(this.materialButton42_Click);
-            // 
-            // materialButton43
-            // 
-            this.materialButton43.AutoSize = false;
-            this.materialButton43.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton43.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton43.Depth = 0;
-            this.materialButton43.HighEmphasis = true;
-            this.materialButton43.Icon = null;
-            this.materialButton43.Location = new System.Drawing.Point(347, 375);
-            this.materialButton43.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton43.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton43.Name = "materialButton43";
-            this.materialButton43.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton43.Size = new System.Drawing.Size(107, 36);
-            this.materialButton43.TabIndex = 29;
-            this.materialButton43.Text = "Save File";
-            this.materialButton43.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton43.UseAccentColor = false;
-            this.materialButton43.UseVisualStyleBackColor = true;
-            this.materialButton43.Click += new System.EventHandler(this.materialButton43_Click);
-            // 
-            // materialButton44
-            // 
-            this.materialButton44.AutoSize = false;
-            this.materialButton44.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton44.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton44.Depth = 0;
-            this.materialButton44.HighEmphasis = true;
-            this.materialButton44.Icon = null;
-            this.materialButton44.Location = new System.Drawing.Point(232, 376);
-            this.materialButton44.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton44.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton44.Name = "materialButton44";
-            this.materialButton44.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton44.Size = new System.Drawing.Size(107, 36);
-            this.materialButton44.TabIndex = 28;
-            this.materialButton44.Text = "Open File";
-            this.materialButton44.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton44.UseAccentColor = false;
-            this.materialButton44.UseVisualStyleBackColor = true;
-            this.materialButton44.Click += new System.EventHandler(this.materialButton44_Click);
-            // 
-            // materialButton46
-            // 
-            this.materialButton46.AutoSize = false;
-            this.materialButton46.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton46.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton46.Depth = 0;
-            this.materialButton46.HighEmphasis = true;
-            this.materialButton46.Icon = null;
-            this.materialButton46.Location = new System.Drawing.Point(2, 376);
-            this.materialButton46.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton46.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton46.Name = "materialButton46";
-            this.materialButton46.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton46.Size = new System.Drawing.Size(107, 36);
-            this.materialButton46.TabIndex = 26;
-            this.materialButton46.Text = "Decrypt";
-            this.materialButton46.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton46.UseAccentColor = false;
-            this.materialButton46.UseVisualStyleBackColor = true;
-            this.materialButton46.Click += new System.EventHandler(this.materialButton46_Click);
-            // 
-            // listBox2
-            // 
-            this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.listBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox2.ForeColor = System.Drawing.SystemColors.Window;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(545, 90);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(137, 273);
-            this.listBox2.TabIndex = 25;
-            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
-            // 
-            // flatTextBox26
-            // 
-            this.flatTextBox26.BackColor = System.Drawing.Color.Transparent;
-            this.flatTextBox26.FocusOnHover = false;
-            this.flatTextBox26.Hint = "";
-            this.flatTextBox26.Location = new System.Drawing.Point(576, 380);
-            this.flatTextBox26.MaxLength = 32767;
-            this.flatTextBox26.Multiline = false;
-            this.flatTextBox26.Name = "flatTextBox26";
-            this.flatTextBox26.ReadOnly = false;
-            this.flatTextBox26.Size = new System.Drawing.Size(98, 29);
-            this.flatTextBox26.TabIndex = 36;
-            this.flatTextBox26.Text = "Enter Key";
-            this.flatTextBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.flatTextBox26.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.flatTextBox26.UseSystemPasswordChar = false;
-            this.flatTextBox26.TextChanged += new System.EventHandler(this.flatTextBox26_TextChanged);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2526,12 +2527,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox3)).EndInit();
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox4)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox5)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
-            this.tabPage8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
