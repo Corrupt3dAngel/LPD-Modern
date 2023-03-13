@@ -94,13 +94,13 @@ namespace LPD_Modern
         {
             // get the length of the input string
             int inputLength = input.Length;
-            // create a hashset of unique characters in the input string
-            HashSet<char> uniqueChars = new HashSet<char>(input);
+            // get the rune frequency dictionary for the input string
+            var runeFrequency = GetRuneFrequency(input);
 
             // calculate the frequency of each unique character in the input string
-            var charFrequencies = uniqueChars.Select(c => new {
-                Character = c,
-                Frequency = (double)input.Count(ch => ch == c) / inputLength
+            var charFrequencies = runeFrequency.Select(rf => new {
+                Character = rf.Key,
+                Frequency = (double)rf.Value / inputLength
             });
 
             // calculate the Shannon entropy using the character frequencies
@@ -109,6 +109,7 @@ namespace LPD_Modern
             // return the Shannon entropy
             return entropy;
         }
+
         public static Dictionary<string, int> GetBigramFrequency(string userInput)
         {
             // Create a new dictionary to store the frequency of each bigram in the user input
@@ -142,7 +143,6 @@ namespace LPD_Modern
             // Return the bigram frequency dictionary
             return bigramFrequency;
         }
-
 
         public static double CalculateBigramRatio(Dictionary<string, int> bigramFrequency, int totalBigramCount)
         {
