@@ -6,6 +6,10 @@ Known Issues
 
 There are key wrapping issues when using the Decrypt button with the Caesar cipher shift, which can impact the accuracy of decryption. Limited accuracy in Cryptoanalysis. Missing rune in Cryptoanalysis (potentially). The use of numbers and special characters with a key is currently prohibited.
 
-Miscellaneous
+Potential future improvements (If I feel like it. . .)
 
-Although the new Application was created in a relatively short timeframe of about 6-7 hours, there is always room for improvement. However, it is still a significant upgrade from the original application and is more visually appealing.
+Fix key wrapping issues when using the Decrypt button with the Caesar cipher shift.
+Improve accuracy in Cryptoanalysis.
+Enable the ues of numbers and special characters with Vigenère Cipher.
+Fix the Transposition Tab.
+Further enhance the user interface (UI).
