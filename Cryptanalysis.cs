@@ -123,21 +123,26 @@ namespace LPD_Modern
                 // Extract the current bigram from the user input
                 string bigram = userInput.Substring(i, 2);
 
-                // If the current bigram already exists in the dictionary, increment its frequency
-                if (bigramFrequency.ContainsKey(bigram))
+                // Check if both runes in the bigram are letters
+                if (char.IsLetter(bigram[0]) && char.IsLetter(bigram[1]))
                 {
-                    bigramFrequency[bigram]++;
-                }
-                // Otherwise, add it to the dictionary with a frequency of 1
-                else
-                {
-                    bigramFrequency[bigram] = 1;
+                    // If the current bigram already exists in the dictionary, increment its frequency
+                    if (bigramFrequency.ContainsKey(bigram))
+                    {
+                        bigramFrequency[bigram]++;
+                    }
+                    // Otherwise, add it to the dictionary with a frequency of 1
+                    else
+                    {
+                        bigramFrequency[bigram] = 1;
+                    }
                 }
             }
 
             // Return the bigram frequency dictionary
             return bigramFrequency;
         }
+
 
         public static double CalculateBigramRatio(Dictionary<string, int> bigramFrequency, int totalBigramCount)
         {
