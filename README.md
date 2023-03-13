@@ -15,4 +15,5 @@ Fix the Transposition Tab.
 Further enhance the user interface (UI).
 
 
-![Screenshot_1](https://user-images.githubusercontent.com/85088397/224795301-2023f0cf-4cbf-4e5d-9712-c152971abe5c.png)
+
+![Screenshot_2](https://user-images.githubusercontent.com/85088397/224795592-d6cb3cf8-0f44-44fe-aca6-88e618f3c583.png)
