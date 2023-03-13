@@ -13,3 +13,6 @@ Improve accuracy in Cryptoanalysis.
 Enable the ues of numbers and special characters with Vigenère Cipher.
 Fix the Transposition Tab.
 Further enhance the user interface (UI).
+
+
+![Screenshot_1](https://user-images.githubusercontent.com/85088397/224795301-2023f0cf-4cbf-4e5d-9712-c152971abe5c.png)
