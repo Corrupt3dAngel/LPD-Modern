@@ -4,8 +4,16 @@ LPDecrypt is my crappy software application that specializes in decrypting the c
 
 Known Issues
 
-There are key wrapping issues when using the Decrypt button with the Caesar cipher shift, which can impact the accuracy of decryption. Limited accuracy in Cryptoanalysis. Missing rune in Cryptoanalysis (potentially). The use of numbers and special characters with a key is currently prohibited.
+There are key wrapping issues when using the Decrypt button with the Caesar cipher shift, which can impact the accuracy of decryption. Limited accuracy in Cryptoanalysis. The use of numbers and special characters with a key is currently prohibited. There is a problem with the formatting of the cryptanalysis output, as the newline character ("\n") is causing it to display a blank frequency alongside the other actual frequencies. Assuming that the newline character ("\n") is not a part of the plaintext, its presence in the cryptanalysis output should not affect the accuracy of the analysis.
 
-Miscellaneous
+Potential future improvements (If I feel like it. . .)
 
-Although the new Application was created in a relatively short timeframe of about 6-7 hours, there is always room for improvement. However, it is still a significant upgrade from the original application and is more visually appealing.
+Fix key wrapping issues when using the Decrypt button with the Caesar cipher shift.
+Improve accuracy in Cryptoanalysis.
+Enable the use of numbers and special characters with the Vigenère cipher and Caesar cipher.
+Fix the Transposition Tab.
+Further enhance the user interface (UI).
+
+
+
+![Screenshot_2](https://user-images.githubusercontent.com/85088397/224795592-d6cb3cf8-0f44-44fe-aca6-88e618f3c583.png)
