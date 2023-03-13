@@ -10,7 +10,7 @@ Potential future improvements (If I feel like it. . .)
 
 Fix key wrapping issues when using the Decrypt button with the Caesar cipher shift.
 Improve accuracy in Cryptoanalysis.
-Enable the ues of numbers and special characters with Vigenère Cipher.
+Enable the use of numbers and special characters with the Vigenère Cipher and Caesar cipher.
 Fix the Transposition Tab.
 Further enhance the user interface (UI).
 
