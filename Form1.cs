@@ -15,6 +15,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Microsoft.VisualBasic;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace LPD_Modern
 {
@@ -29,7 +30,7 @@ namespace LPD_Modern
         Point lastPoint;
         public void MatchInterrupterRunes()
         {
-            // Get the text from the FastColoredTextBox5 control
+            // Get the text from the FastColoredTextBox3 control
             string inputText = fastColoredTextBox3.Text;
 
             // Retrieve the dictionary of runic letter equivalents
@@ -85,10 +86,10 @@ namespace LPD_Modern
                 }
             }
 
-            // Set the updated text back into the FastColoredTextBox5 control
+            // Set the updated text back into the FastColoredTextBox3 control
             fastColoredTextBox3.Text = inputText;
         }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -155,7 +156,7 @@ namespace LPD_Modern
                 }
             }
         }
-            private void materialButton8_Click(object sender, EventArgs e)
+        private void materialButton8_Click(object sender, EventArgs e)
         {
             // Set the desired line length for the output text (change this value as needed)
             const int lineLength = 20;
@@ -290,7 +291,7 @@ namespace LPD_Modern
             // Create a StringBuilder to efficiently build up the Atbash cipher text
             StringBuilder atbashedText = new StringBuilder();
 
-            // Iterate over each line in the "fastColoredTextBox1" control
+            // Iterate over each line in the "fastColoredTextBox4" control
             foreach (string line in fastColoredTextBox4.Lines)
             {
                 // Create a new string to hold the Atbash cipher line
@@ -318,7 +319,7 @@ namespace LPD_Modern
                 atbashedText.AppendLine(atbashedLine);
             }
 
-            // Clear the text of the "fastColoredTextBox1" control and set its text to the Atbash cipher text
+            // Clear the text of the "fastColoredTextBox4" control and set its text to the Atbash cipher text
             fastColoredTextBox4.Clear();
             fastColoredTextBox4.AppendText(atbashedText.ToString());
         }
@@ -411,7 +412,7 @@ namespace LPD_Modern
             // Create a StringBuilder to efficiently build up the output text
             StringBuilder outputTextBuilder = new StringBuilder();
 
-            // Iterate over each character in the input text of the "fastColoredTextBox1" control
+            // Iterate over each character in the input text of the "fastColoredTextBox3" control
             foreach (char c in fastColoredTextBox3.Text)
             {
                 // Retrieve the numeric equivalent of the current character from the cipher table
@@ -434,13 +435,13 @@ namespace LPD_Modern
             // Add a newline character and the total sum to the end of the output text
             outputTextBuilder.AppendLine().AppendFormat("Total Sum = {0}", totalSum);
 
-            // Set the text of the "fastColoredTextBox1" control to the output text
+            // Set the text of the "fastColoredTextBox3" control to the output text
             fastColoredTextBox3.Text = outputTextBuilder.ToString().TrimEnd();
         }
 
         private void materialButton31_Click(object sender, EventArgs e)
         {
-            // Get the input text from the "fastColoredTextBox1" control
+            // Get the input text from the "fastColoredTextBox3" control
             string inputText = fastColoredTextBox3.Text;
 
             // Retrieve the set of keys in the cipher table from a static class called "Functions"
@@ -481,13 +482,13 @@ namespace LPD_Modern
             outputTextBuilder.AppendLine();
             outputTextBuilder.AppendFormat("Total Sum = {0}", totalSum);
 
-            // Set the text of the "fastColoredTextBox1" control to the output text
+            // Set the text of the "fastColoredTextBox3" control to the output text
             fastColoredTextBox3.Text = outputTextBuilder.ToString().TrimEnd();
         }
 
         public async void fastColoredTextBox1_Load(object sender, EventArgs e)
         {
-            // Get the user input from the FastColoredTextBox control
+            // Get the user input from the FastColoredTextBox1 control
             string userInput = fastColoredTextBox1.Text;
 
             // Calculate the frequency of each rune in the input in parallel
@@ -634,7 +635,7 @@ namespace LPD_Modern
 
         private void materialButton21_Click(object sender, EventArgs e)
         {
-            // Get the text entered by the user in the "fastColoredTextBox1" control
+            // Get the text entered by the user in the "fastColoredTextBox4" control
             string inputText = fastColoredTextBox4.Text;
 
             // Create a new StringBuilder instance to efficiently build up the output string
@@ -659,10 +660,10 @@ namespace LPD_Modern
                 }
             }
 
-            // Clear the text of the "fastColoredTextBox5" control
+            // Clear the text of the "fastColoredTextBox3" control
             fastColoredTextBox3.Clear();
 
-            // Set the text of the "fastColoredTextBox5" control to the resulting string
+            // Set the text of the "fastColoredTextBox3" control to the resulting string
             fastColoredTextBox3.Text = outputTextBuilder.ToString();
 
             // Call the MatchInterrupterRunes method to perform additional processing
@@ -763,7 +764,7 @@ namespace LPD_Modern
             // Define an array of delimiters to use for word counting
             string[] delimiters = { " ", "\r\n", "\t", "\n", "\r", ",", ".", "!", "?", ";", ":", "-", "_", "\"", "'", "(", ")", "{", "}", "[", "]" };
 
-            // Get the text from the fastColoredTextBox4 control
+            // Get the text from the fastColoredTextBox3 control
             string text1 = fastColoredTextBox3.Text;
 
             // Trim the text to remove any leading or trailing whitespaces
@@ -823,7 +824,7 @@ namespace LPD_Modern
             // Create a StringBuilder to efficiently build up the output text
             StringBuilder outputTextBuilder = new StringBuilder();
 
-            // Iterate over each character in the input text of the "fastColoredTextBox1" control
+            // Iterate over each character in the input text of the "fastColoredTextBox2" control
             foreach (char c in fastColoredTextBox2.Text)
             {
                 // Retrieve the numeric equivalent of the current character from the cipher table
@@ -846,7 +847,7 @@ namespace LPD_Modern
             // Add a newline character and the total sum to the end of the output text
             outputTextBuilder.AppendLine().AppendFormat("Total Sum = {0}", totalSum);
 
-            // Set the text of the "fastColoredTextBox1" control to the output text
+            // Set the text of the "fastColoredTextBox2" control to the output text
             fastColoredTextBox2.Text = outputTextBuilder.ToString().TrimEnd();
         }
 
@@ -862,7 +863,7 @@ namespace LPD_Modern
             // Create a StringBuilder to efficiently build up the output text
             StringBuilder outputTextBuilder = new StringBuilder();
 
-            // Iterate over each character in the input text of the "fastColoredTextBox1" control
+            // Iterate over each character in the input text of the "fastColoredTextBox4" control
             foreach (char c in fastColoredTextBox4.Text)
             {
                 // Retrieve the numeric equivalent of the current character from the cipher table
@@ -885,13 +886,13 @@ namespace LPD_Modern
             // Add a newline character and the total sum to the end of the output text
             outputTextBuilder.AppendLine().AppendFormat("Total Sum = {0}", totalSum);
 
-            // Set the text of the "fastColoredTextBox1" control to the output text
+            // Set the text of the "fastColoredTextBox4" control to the output text
             fastColoredTextBox4.Text = outputTextBuilder.ToString().TrimEnd();
         }
 
         private void materialButton29_Click(object sender, EventArgs e)
         {
-            // Get the input text from the "fastColoredTextBox1" control
+            // Get the input text from the "fastColoredTextBox2" control
             string inputText = fastColoredTextBox2.Text;
 
             // Retrieve the set of keys in the cipher table from a static class called "Functions"
@@ -932,13 +933,13 @@ namespace LPD_Modern
             outputTextBuilder.AppendLine();
             outputTextBuilder.AppendFormat("Total Sum = {0}", totalSum);
 
-            // Set the text of the "fastColoredTextBox1" control to the output text
+            // Set the text of the "fastColoredTextBox2" control to the output text
             fastColoredTextBox2.Text = outputTextBuilder.ToString().TrimEnd();
         }
 
         private void materialButton33_Click(object sender, EventArgs e)
         {
-            // Get the input text from the "fastColoredTextBox1" control
+            // Get the input text from the "fastColoredTextBox4" control
             string inputText = fastColoredTextBox4.Text;
 
             // Retrieve the set of keys in the cipher table from a static class called "Functions"
@@ -979,7 +980,7 @@ namespace LPD_Modern
             outputTextBuilder.AppendLine();
             outputTextBuilder.AppendFormat("Total Sum = {0}", totalSum);
 
-            // Set the text of the "fastColoredTextBox1" control to the output text
+            // Set the text of the "fastColoredTextBox4" control to the output text
             fastColoredTextBox4.Text = outputTextBuilder.ToString().TrimEnd();
         }
 
@@ -991,7 +992,7 @@ namespace LPD_Modern
             // Create a StringBuilder to efficiently build up the Atbash cipher text
             StringBuilder atbashedText = new StringBuilder();
 
-            // Iterate over each line in the "fastColoredTextBox1" control
+            // Iterate over each line in the "fastColoredTextBox2" control
             foreach (string line in fastColoredTextBox2.Lines)
             {
                 // Create a new string to hold the Atbash cipher line
@@ -1019,7 +1020,7 @@ namespace LPD_Modern
                 atbashedText.AppendLine(atbashedLine);
             }
 
-            // Clear the text of the "fastColoredTextBox1" control and set its text to the Atbash cipher text
+            // Clear the text of the "fastColoredTextBox2" control and set its text to the Atbash cipher text
             fastColoredTextBox2.Clear();
             fastColoredTextBox2.AppendText(atbashedText.ToString());
         }
@@ -1110,7 +1111,7 @@ namespace LPD_Modern
                     }
                 }
 
-                // Update the text in the FastColoredTextBox
+                // Update the text in the FastColoredTextBox3
                 fastColoredTextBox3.BeginUpdate();
                 fastColoredTextBox3.Text = builder.ToString();
                 fastColoredTextBox3.EndUpdate();
@@ -1142,7 +1143,7 @@ namespace LPD_Modern
 
         private void materialButton37_Click(object sender, EventArgs e)
         {
-            // Get the current text in the fastColoredTextBox4 control
+            // Get the current text in the fastColoredTextBox3 control
             string originalText = fastColoredTextBox3.Text;
 
             // Split the text into lines
@@ -1162,7 +1163,7 @@ namespace LPD_Modern
             // Join the flipped lines back into a single string
             string flippedText = string.Join(Environment.NewLine, lines);
 
-            // Set the text of the fastColoredTextBox4 control to the flipped text
+            // Set the text of the fastColoredTextBox3 control to the flipped text
             fastColoredTextBox3.Text = flippedText;
         }
 
@@ -1260,7 +1261,7 @@ namespace LPD_Modern
 
         private void materialButton28_Click(object sender, EventArgs e)
         {
-            // Get the current text in the fastColoredTextBox3 control
+            // Get the current text in the fastColoredTextBox2 control
             string originalText = fastColoredTextBox2.Text;
 
             // Split the text into lines
@@ -1277,7 +1278,7 @@ namespace LPD_Modern
             // Join the reversed lines back into a single string
             string reversedText = string.Join(Environment.NewLine, lines);
 
-            // Set the text of the fastColoredTextBox3 control to the reversed text
+            // Set the text of the fastColoredTextBox2 control to the reversed text
             fastColoredTextBox2.Text = reversedText;
         }
 
@@ -1389,6 +1390,220 @@ namespace LPD_Modern
         private void flatTextBox24_TextChanged(object sender, EventArgs e)
         {
             flatTextBox24.ReadOnly = true;
+        }
+
+        private void materialButton40_Click(object sender, EventArgs e)
+        {
+            listBox2.Items.Clear();//Clear Items in the LuaScriptList
+            Functions.PopulateListBox(listBox2, "./Pages", "*.txt");
+            Functions.PopulateListBox(listBox2, "./Pages", "*.lua");
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fastColoredTextBox5.Text = File.ReadAllText($"./Pages/{listBox2.SelectedItem}");
+        }
+        private void materialButton46_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Get the input text from fastColoredTextBox5
+                string inputText = fastColoredTextBox5.Text;
+
+                // Get the transposition key from flatTextBox26
+                string keyText = flatTextBox26.Text;
+
+                // Decrypt the input text using the transposition cipher and key
+                string plainText = Functions.TranspositionCipher(inputText, keyText);
+
+                // Convert the decrypted text to its Latin format using the runicToLatin dictionary
+                Dictionary<char, string> runicToLatin = Functions.DirectTranslation;
+                StringBuilder latinTextBuilder = new StringBuilder();
+                foreach (char c in plainText)
+                {
+                    string latinChar;
+                    if (runicToLatin.TryGetValue(c, out latinChar))
+                    {
+                        latinTextBuilder.Append(latinChar);
+                    }
+                    else
+                    {
+                        latinTextBuilder.Append(c);
+                    }
+                }
+                string latinText = latinTextBuilder.ToString();
+
+                // Set the output text to the decrypted and converted plaintext
+                fastColoredTextBox3.Text = latinText;
+            }
+            catch (ArgumentException ex)
+            {
+                // If there was an error with the transposition key, display an error message
+                MessageBox.Show(ex.Message);
+            }
+
+            // Display an alert message
+            MessageBox.Show("Please note that this feature is still a work in progress and may not produce accurate results. Use the output with caution and report any issues or errors you encounter.");
+        }
+
+        private void flatTextBox26_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialButton41_Click(object sender, EventArgs e)
+        {
+            fastColoredTextBox5.Clear();
+        }
+
+        private void materialButton39_Click(object sender, EventArgs e)
+        {
+            // Set the desired line length for the output text (change this value as needed)
+            const int lineLength = 20;
+
+            // Initialize variables for counting the number of characters and the sum of numeric equivalents
+            int count = 0;
+            int totalSum = 0;
+
+            // Create a StringBuilder to efficiently build up the output text
+            StringBuilder outputTextBuilder = new StringBuilder();
+
+            // Iterate over each character in the input text of the "fastColoredTextBox5" control
+            foreach (char c in fastColoredTextBox5.Text)
+            {
+                // Retrieve the numeric equivalent of the current character from the cipher table
+                if (Functions.NumericEquivalent.TryGetValue(c, out int numericValue))
+                {
+                    // If the line is longer than the desired line length, start a new line
+                    if (count >= lineLength)
+                    {
+                        outputTextBuilder.AppendLine();
+                        count = 0;
+                    }
+
+                    // Add the numeric equivalent to the output text and update the count and total sum
+                    outputTextBuilder.Append(numericValue).Append(' ');
+                    totalSum += numericValue;
+                    count++;
+                }
+            }
+
+            // Add a newline character and the total sum to the end of the output text
+            outputTextBuilder.AppendLine().AppendFormat("Total Sum = {0}", totalSum);
+
+            // Set the text of the "fastColoredTextBox5" control to the output text
+            fastColoredTextBox5.Text = outputTextBuilder.ToString().TrimEnd();
+        }
+
+        private void materialButton14_Click(object sender, EventArgs e)
+        {
+            // Get the input text from the "fastColoredTextBox5" control
+            string inputText = fastColoredTextBox5.Text;
+
+            // Retrieve the set of keys in the cipher table from a static class called "Functions"
+            HashSet<char> cipherTableKeys = new HashSet<char>(Functions.PrimeEquivalent.Keys);
+
+            // Set the desired line length for the output text (change this value as needed)
+            const int lineLength = 20;
+
+            // Initialize variables for counting the number of characters and the sum of prime equivalents
+            int count = 0;
+            int totalSum = 0;
+
+            // Create a StringBuilder to efficiently build up the output text
+            StringBuilder outputTextBuilder = inputText
+                .Where(cipherTableKeys.Contains) // Filter out characters not in the cipher table
+                .Aggregate(new StringBuilder(inputText.Length), (builder, c) => // Aggregate characters into a StringBuilder object
+                {
+                    // If the line is longer than the desired line length, start a new line
+                    if (count >= lineLength)
+                    {
+                        builder.AppendLine();
+                        count = 0;
+                    }
+
+                    // Retrieve the prime equivalent of the current character from the cipher table
+                    int primeEquivalent = Functions.PrimeEquivalent[c];
+
+                    // Add the prime equivalent to the output text and update the count and total sum
+                    builder.Append(primeEquivalent).Append(' ');
+                    totalSum += primeEquivalent;
+                    count++;
+
+                    // Return the StringBuilder object with the new character added
+                    return builder;
+                });
+
+            // Add a newline character and the total sum to the end of the output text
+            outputTextBuilder.AppendLine();
+            outputTextBuilder.AppendFormat("Total Sum = {0}", totalSum);
+
+            // Set the text of the "fastColoredTextBox5" control to the output text
+            fastColoredTextBox5.Text = outputTextBuilder.ToString().TrimEnd();
+        }
+
+        private void materialButton44_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                openFileDialog1.Title = "Open";
+                fastColoredTextBox5.Text = File.ReadAllText(openFileDialog1.FileName);
+            }
+        }
+
+        private void materialButton43_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                using (Stream s = File.Open(saveFileDialog1.FileName, FileMode.CreateNew))
+                using (StreamWriter sw = new StreamWriter(s))
+                {
+                    sw.Write(fastColoredTextBox5.Text);
+                }
+            }
+        }
+
+        private void materialButton42_Click(object sender, EventArgs e)
+        {
+            // Retrieve the Atbash table from a static class called "Functions"
+            Dictionary<string, string> atbashTable = Functions.atbashTable;
+
+            // Create a StringBuilder to efficiently build up the Atbash cipher text
+            StringBuilder atbashedText = new StringBuilder();
+
+            // Iterate over each line in the "fastColoredTextBox5" control
+            foreach (string line in fastColoredTextBox5.Lines)
+            {
+                // Create a new string to hold the Atbash cipher line
+                string atbashedLine = "";
+
+                // Iterate over each character (rune) in the current line
+                foreach (char rune in line)
+                {
+                    // Convert the current rune to a string
+                    string runeString = rune.ToString();
+
+                    // If the rune is in the Atbash table, replace it with its Atbash equivalent
+                    if (atbashTable.ContainsKey(runeString))
+                    {
+                        atbashedLine += atbashTable[runeString];
+                    }
+                    else
+                    {
+                        // Otherwise, just add the original rune to the Atbash cipher line
+                        atbashedLine += runeString;
+                    }
+                }
+
+                // Add the Atbash cipher line (with a newline character) to the StringBuilder
+                atbashedText.AppendLine(atbashedLine);
+            }
+
+            // Clear the text of the "fastColoredTextBox5" control and set its text to the Atbash cipher text
+            fastColoredTextBox5.Clear();
+            fastColoredTextBox5.AppendText(atbashedText.ToString());
         }
     }
 }

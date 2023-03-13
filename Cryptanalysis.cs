@@ -86,16 +86,21 @@ namespace LPD_Modern
         }
         public static double ShannonEntropy(string input)
         {
+            // get the length of the input string
             int inputLength = input.Length;
+            // create a hashset of unique characters in the input string
             HashSet<char> uniqueChars = new HashSet<char>(input);
 
+            // calculate the frequency of each unique character in the input string
             var charFrequencies = uniqueChars.Select(c => new {
                 Character = c,
                 Frequency = (double)input.Count(ch => ch == c) / inputLength
             });
 
+            // calculate the Shannon entropy using the character frequencies
             double entropy = charFrequencies.Sum(cf => -cf.Frequency * Math.Log(cf.Frequency, 2));
 
+            // return the Shannon entropy
             return entropy;
         }
 
@@ -406,14 +411,14 @@ namespace LPD_Modern
                     }
                 }
             }
-
-            // Debug statements
-            //Console.WriteLine($"Found {similarGrams.Count} similar grams for 3-grams in text of length {text.Length}.");
-            //foreach (KeyValuePair<string, int> pair in similarGrams)
-            //{
-            //    Console.WriteLine($"{pair.Key}: {pair.Value}");
-            //}
-
+            /*
+             Debug statements
+            Console.WriteLine($"Found {similarGrams.Count} similar grams for 3-grams in text of length {text.Length}.");
+            foreach (KeyValuePair<string, int> pair in similarGrams)
+            {
+                Console.WriteLine($"{pair.Key}: {pair.Value}");
+            }
+            */
             //Return the dictionary of similar grams in the input text
             return similarGrams;
         }

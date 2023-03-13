@@ -10,7 +10,7 @@ namespace LPD_Modern
 {
     internal class Functions
     {
-        /* First program in years, don't be judging me :/  */
+        /* Using several dictionaries may not be the most efficient or elegant solution, but it gets the job done. Please bear with me. . . :/  */
         public static readonly string[] runeArray = { "ᚠ", "ᚢ", "ᚦ", "ᚩ", "ᚱ", "ᚳ", "ᚷ", "ᚹ", "ᚻ", "ᚾ", "ᛁ", "ᛂ", "ᛇ", "ᛈ", "ᛉ", "ᛋ", "ᛏ", "ᛒ", "ᛖ", "ᛗ", "ᛚ", "ᛝ", "ᛟ", "ᛞ", "ᚪ", "ᚫ", "ᚣ", "ᛡ", "ᛠ", "ᛄ" };
         public static readonly int[] numericArray = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 };
         public static readonly int[] primeArray = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109 };
@@ -19,6 +19,7 @@ namespace LPD_Modern
         public static readonly Dictionary<char, int> PrimeEquivalent = new Dictionary<char, int> { { 'ᚠ', 2 }, { 'ᚢ', 3 }, { 'ᚦ', 5 }, { 'ᚩ', 7 }, { 'ᚱ', 11 }, { 'ᚳ', 13 }, { 'ᚷ', 17 }, { 'ᚹ', 19 }, { 'ᚻ', 23 }, { 'ᚾ', 29 }, { 'ᛁ', 31 }, { 'ᛂ', 37 }, { 'ᛄ', 37 }, { 'ᛇ', 43 }, { 'ᛈ', 47 }, { 'ᛉ', 53 }, { 'ᛋ', 59 }, { 'ᛏ', 61 }, { 'ᛒ', 67 }, { 'ᛖ', 71 }, { 'ᛗ', 73 }, { 'ᛚ', 79 }, { 'ᛝ', 83 }, { 'ᛟ', 89 }, { 'ᛞ', 97 }, { 'ᚪ', 101 }, { 'ᚫ', 103 }, { 'ᚣ', 107 }, { 'ᛡ', 109 }, { 'ᛠ', 109 } };
         public static readonly Dictionary<string, string> atbashTable = new Dictionary<string, string> { { "ᚠ", "ᛠ" }, { "ᚢ", "ᛡ" }, { "ᚦ", "ᚣ" }, { "ᚩ", "ᚫ" }, { "ᚱ", "ᚪ" }, { "ᚳ", "ᛞ" }, { "ᚷ", "ᛟ" }, { "ᚹ", "ᛝ" }, { "ᚻ", "ᛚ" }, { "ᚾ", "ᛗ" }, { "ᛁ", "ᛖ" }, { "ᛂ", "ᛒ" }, { "ᛇ", "ᛏ" }, { "ᛈ", "ᛋ" }, { "ᛉ", "ᛉ" }, { "ᛋ", "ᛈ" }, { "ᛏ", "ᛇ" }, { "ᛒ", "ᛂ" }, { "ᛖ", "ᛁ" }, { "ᛗ", "ᚾ" }, { "ᛚ", "ᚻ" }, { "ᛝ", "ᚹ" }, { "ᛟ", "ᚷ" }, { "ᛞ", "ᚳ" }, { "ᚪ", "ᚱ" }, { "ᚫ", "ᚩ" }, { "ᚣ", "ᚦ" }, { "ᛡ", "ᚢ" }, { "ᛠ", "ᚠ" }, { "ᛄ", "ᛒ" } };
         public static readonly Dictionary<char, string> DirectTranslation = new Dictionary<char, string> { { 'ᚠ', "F" }, { 'ᚢ', "V(U)" }, { 'ᚦ', "TH" }, { 'ᚩ', "O" }, { 'ᚱ', "R" }, { 'ᚳ', "C(K)" }, { 'ᚷ', "G" }, { 'ᚹ', "W" }, { 'ᚻ', "H" }, { 'ᚾ', "N" }, { 'ᛁ', "I" }, { 'ᛂ', "J" }, { 'ᛇ', "EO" }, { 'ᛈ', "P" }, { 'ᛉ', "X" }, { 'ᛋ', "S(Z)" }, { 'ᛏ', "T" }, { 'ᛒ', "B" }, { 'ᛖ', "E" }, { 'ᛗ', "M" }, { 'ᛚ', "L" }, { 'ᛝ', "NG(ING)" }, { 'ᛟ', "OE" }, { 'ᛞ', "D" }, { 'ᚪ', "A" }, { 'ᚫ', "AE" }, { 'ᚣ', "Y" }, { 'ᛡ', "IA(IO)" }, { 'ᛠ', "EA" }, { 'ᛄ', "J" }, };
+        public static readonly Dictionary<string, string> runicEquivalents = new Dictionary<string, string>(); //Pretty bad IK. . . 
 
         // Get the numeric equivalent of a rune
         public static int GetNumericEquivalent(string rune)
@@ -211,7 +212,6 @@ namespace LPD_Modern
             // Return the final decrypted output for the given shift and key
             return outputForKey;
         }
-        public static readonly Dictionary<string, string> runicEquivalents = new Dictionary<string, string>();
 
         public class RuneData
         {
@@ -230,6 +230,100 @@ namespace LPD_Modern
                 PrimeEquivalent = primeEquivalent;
 
             }
+        }
+
+        public static char[,] TransposeGrid(char[,] grid, int[] key)
+        {
+            int numRows = grid.GetLength(0);
+            int numCols = grid.GetLength(1);
+            char[,] newGrid = new char[numRows, numCols];
+            for (int i = 0; i < key.Length; i++)
+            {
+                int oldIndex = key[i] - 1;
+                for (int row = 0; row < numRows; row++)
+                {
+                    newGrid[row, i] = grid[row, oldIndex];
+                }
+            }
+            return newGrid;
+        }
+
+        public static string TranspositionCipher(string inputText, string keyText)
+        {
+            // Remove any spaces from the input text and key
+            inputText = inputText.Replace(" ", "");
+            keyText = keyText.Replace(" ", "");
+
+            // Convert the key permutation to an integer array
+            int[] key = new int[keyText.Length];
+            for (int i = 0; i < keyText.Length; i++)
+            {
+                if (!int.TryParse(keyText[i].ToString(), out key[i]))
+                {
+                    throw new ArgumentException("Invalid transposition key: " + keyText);
+                }
+            }
+
+            // Determine the number of rows and columns in the grid
+            int numRows = keyText.Length;
+            int numCols = (int)Math.Ceiling((double)inputText.Length / numRows);
+
+            // Check if the input text needs padding with spaces to fill the grid
+            int numSpaces = numRows * numCols - inputText.Length;
+            if (numSpaces > 0)
+            {
+                inputText += new string(' ', numSpaces);
+            }
+
+            // Create a character array to represent the grid
+            char[,] grid = new char[numRows, numCols];
+
+            // Fill the grid with the input text, row by row
+            int index = 0;
+            for (int row = 0; row < numRows; row++)
+            {
+                for (int col = 0; col < numCols; col++)
+                {
+                    if (index >= inputText.Length)
+                    {
+                        grid[row, col] = ' ';
+                    }
+                    else
+                    {
+                        grid[row, col] = inputText[index];
+                    }
+                    index++;
+                }
+            }
+
+            // Rearrange the columns of the grid according to the key permutation
+            char[,] newGrid = new char[numRows, numCols];
+            for (int i = 0; i < key.Length; i++)
+            {
+                int oldIndex = key[i] - 1;
+                for (int row = 0; row < numRows; row++)
+                {
+                    newGrid[row, i] = grid[row, oldIndex];
+                }
+            }
+
+            // Read the plaintext message column by column from the rearranged grid
+            StringBuilder plainTextBuilder = new StringBuilder();
+            for (int col = 0; col < numCols; col++)
+            {
+                for (int row = 0; row < numRows; row++)
+                {
+                    if (newGrid[row, col] != '\0' && newGrid[row, col] != ' ')
+                    {
+                        plainTextBuilder.Append(newGrid[row, col]);
+                    }
+                }
+            }
+
+            // Convert the StringBuilder to a string
+            string plainText = plainTextBuilder.ToString();
+
+            return plainText;
         }
 
         // Define an array of RuneData objects to represent each rune
