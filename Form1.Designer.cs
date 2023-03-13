@@ -62,6 +62,7 @@
             this.materialButton28 = new MaterialSkin.Controls.MaterialButton();
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.flatTextBox25 = new FlatUI.FlatTextBox();
             this.flatTextBox18 = new FlatUI.FlatTextBox();
             this.flatTextBox17 = new FlatUI.FlatTextBox();
             this.flatTextBox16 = new FlatUI.FlatTextBox();
@@ -149,7 +150,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.flatTextBox25 = new FlatUI.FlatTextBox();
             this.panel1.SuspendLayout();
             this.tabPage_Modern_Black1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -600,7 +600,7 @@
         '\"',
         '\'',
         '\''};
-            this.fastColoredTextBox2.AutoScrollMinSize = new System.Drawing.Size(331, 18);
+            this.fastColoredTextBox2.AutoScrollMinSize = new System.Drawing.Size(302, 18);
             this.fastColoredTextBox2.BackBrush = null;
             this.fastColoredTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.fastColoredTextBox2.BookmarkColor = System.Drawing.Color.Blue;
@@ -809,6 +809,23 @@
             this.tabPage3.Size = new System.Drawing.Size(684, 419);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Cryptanalysis";
+            // 
+            // flatTextBox25
+            // 
+            this.flatTextBox25.BackColor = System.Drawing.Color.Transparent;
+            this.flatTextBox25.FocusOnHover = false;
+            this.flatTextBox25.Hint = "";
+            this.flatTextBox25.Location = new System.Drawing.Point(3, 38);
+            this.flatTextBox25.MaxLength = 32767;
+            this.flatTextBox25.Multiline = false;
+            this.flatTextBox25.Name = "flatTextBox25";
+            this.flatTextBox25.ReadOnly = false;
+            this.flatTextBox25.Size = new System.Drawing.Size(221, 29);
+            this.flatTextBox25.TabIndex = 21;
+            this.flatTextBox25.Text = "flatTextBox25";
+            this.flatTextBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.flatTextBox25.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.flatTextBox25.UseSystemPasswordChar = false;
             // 
             // flatTextBox18
             // 
@@ -1589,7 +1606,7 @@
         '\"',
         '\'',
         '\''};
-            this.fastColoredTextBox4.AutoScrollMinSize = new System.Drawing.Size(281, 18);
+            this.fastColoredTextBox4.AutoScrollMinSize = new System.Drawing.Size(252, 18);
             this.fastColoredTextBox4.BackBrush = null;
             this.fastColoredTextBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.fastColoredTextBox4.BookmarkColor = System.Drawing.Color.Blue;
@@ -2205,23 +2222,6 @@
             this.label8.Size = new System.Drawing.Size(144, 32);
             this.label8.TabIndex = 8;
             this.label8.Text = "UI/Design -";
-            // 
-            // flatTextBox25
-            // 
-            this.flatTextBox25.BackColor = System.Drawing.Color.Transparent;
-            this.flatTextBox25.FocusOnHover = false;
-            this.flatTextBox25.Hint = "";
-            this.flatTextBox25.Location = new System.Drawing.Point(3, 38);
-            this.flatTextBox25.MaxLength = 32767;
-            this.flatTextBox25.Multiline = false;
-            this.flatTextBox25.Name = "flatTextBox25";
-            this.flatTextBox25.ReadOnly = false;
-            this.flatTextBox25.Size = new System.Drawing.Size(221, 29);
-            this.flatTextBox25.TabIndex = 21;
-            this.flatTextBox25.Text = "flatTextBox25";
-            this.flatTextBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.flatTextBox25.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.flatTextBox25.UseSystemPasswordChar = false;
             // 
             // Form1
             // 

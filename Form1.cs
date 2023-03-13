@@ -1080,27 +1080,40 @@ namespace LPD_Modern
             // Prompt the user to enter the search query
             string searchQuery = Interaction.InputBox("Enter search query:", "Search");
 
-            // Convert the search query to lowercase for case-insensitive search
-            searchQuery = searchQuery.ToLower();
-
-            // Split the text into lines
-            string[] lines = fastColoredTextBox3.Text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
-
-            // Iterate over each line and check if it contains the search query
-            for (int i = 0; i < lines.Length; i++)
+            // Create a StringReader to read the text line by line
+            using (var reader = new StringReader(fastColoredTextBox3.Text))
             {
-                string line = lines[i].ToLower();
-                int index = line.IndexOf(searchQuery);
-                if (index != -1)
+                // Create a StringBuilder to build the modified text
+                var builder = new StringBuilder();
+                string line;
+                while ((line = reader.ReadLine()) != null)
                 {
-                    // Highlight the search query in the line
-                    lines[i] = line.Substring(0, index) + "<" + searchQuery + ">" + line.Substring(index + searchQuery.Length);
+                    // Perform a case-insensitive search for the search query in the line
+                    int index = line.IndexOf(searchQuery, StringComparison.OrdinalIgnoreCase);
+                    if (index != -1)
+                    {
+                        // Highlight the search query in the line
+                        line = line.Substring(0, index) + "<" + searchQuery + ">" + line.Substring(index + searchQuery.Length);
 
-                    // Set the text color of the highlighted search query
-                    fastColoredTextBox3.SelectionStart = index + 1;
-                    fastColoredTextBox3.SelectionLength = searchQuery.Length;
-                    fastColoredTextBox3.SelectionColor = Color.Red;
+                        // Append the modified line to the StringBuilder
+                        builder.AppendLine(line);
+
+                        // Set the text color of the highlighted search query
+                        fastColoredTextBox3.SelectionStart = builder.Length - (line.Length - index) + 1;
+                        fastColoredTextBox3.SelectionLength = searchQuery.Length;
+                        fastColoredTextBox3.SelectionColor = Color.Red;
+                    }
+                    else
+                    {
+                        // Append the original line to the StringBuilder
+                        builder.AppendLine(line);
+                    }
                 }
+
+                // Update the text in the FastColoredTextBox
+                fastColoredTextBox3.BeginUpdate();
+                fastColoredTextBox3.Text = builder.ToString();
+                fastColoredTextBox3.EndUpdate();
             }
         }
 
@@ -1158,38 +1171,52 @@ namespace LPD_Modern
             fastColoredTextBox3.Multiline = true;
             fastColoredTextBox3.WordWrap = true;
 
-
-            // Get the text from the fastColoredTextBox5 control
+            // Get the text from the fastColoredTextBox3 control
             string originalText = fastColoredTextBox3.Text;
 
-            // Split the text into separate words or characters, depending on how the permutation is to be applied.
-            string[] words = originalText.Split(new char[] { ' ', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            // Split the text into lines
+            string[] lines = originalText.Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
 
-            // Apply the permutation to each word
-            List<string> permutedWords = new List<string>();
-            foreach (string word in words)
+            // Create a single instance of the Random object to be reused
+            Random random = new Random();
+
+            // Apply the permutation to each word on each line
+            List<string> permutedLines = new List<string>();
+            foreach (string line in lines)
             {
-                // Convert the word to a list of characters
-                List<char> chars = word.ToCharArray().ToList();
+                // Split the line into separate words
+                string[] words = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-                // Randomly shuffle the list of characters
-                for (int i = chars.Count - 1; i > 0; i--)
+                // Apply the permutation to each word
+                List<string> permutedWords = new List<string>();
+                foreach (string word in words)
                 {
-                    int j = new Random().Next(0, i + 1);
-                    char temp = chars[i];
-                    chars[i] = chars[j];
-                    chars[j] = temp;
+                    // Convert the word to a list of characters
+                    List<char> chars = word.ToCharArray().ToList();
+
+                    // Randomly shuffle the list of characters using the same Random object
+                    for (int i = chars.Count - 1; i > 0; i--)
+                    {
+                        int j = random.Next(0, i + 1);
+                        char temp = chars[i];
+                        chars[i] = chars[j];
+                        chars[j] = temp;
+                    }
+
+                    // Convert the shuffled list of characters back to a string and add it to the list of permuted words
+                    string permutedWord = new string(chars.ToArray());
+                    permutedWords.Add(permutedWord);
                 }
 
-                // Convert the shuffled list of characters back to a string and add it to the list of permuted words
-                string permutedWord = new string(chars.ToArray());
-                permutedWords.Add(permutedWord);
+                // Join the permuted words back together on the line and add the line to the list of permuted lines
+                string permutedLine = string.Join(" ", permutedWords);
+                permutedLines.Add(permutedLine);
             }
 
-            // Join the permuted words back together to form the new text
-            string permutedText = string.Join(" ", permutedWords);
+            // Join the permuted lines back together to form the new text
+            string permutedText = string.Join(Environment.NewLine, permutedLines);
 
-            // Output the result of the permutation in the fastColoredTextBox5 control, maintaining the original format of the text
+            // Output the result of the permutation in the fastColoredTextBox3 control, maintaining the original format of the text
             fastColoredTextBox3.Text = permutedText;
         }
 
