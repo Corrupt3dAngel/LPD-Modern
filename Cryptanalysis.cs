@@ -22,16 +22,12 @@ namespace LPD_Modern
                     continue;
                 }
 
-                // If the current character already exists in the dictionary, increment its frequency
-                if (runeFrequency.ContainsKey(c))
-                {
-                    runeFrequency[c]++;
-                }
-                // Otherwise, add it to the dictionary with a frequency of 1
-                else
-                {
-                    runeFrequency[c] = 1;
-                }
+                // Try to get the frequency for the current character from the dictionary
+                // If the character is not present, frequency will be set to 0
+                runeFrequency.TryGetValue(c, out int frequency);
+
+                // Increment the frequency and store it in the dictionary
+                runeFrequency[c] = frequency + 1;
             }
 
             // Return the rune frequency dictionary
@@ -234,21 +230,16 @@ namespace LPD_Modern
             // Create a new empty dictionary named sameGPFrequency
             Dictionary<string, int> sameGPFrequency = new Dictionary<string, int>();
 
-            // Get the total number of runes in the userInput string
-            int totalRuneCount = userInput.Length;
-
             // Iterate over the runes in the userInput string
-            for (int i = 0; i < totalRuneCount - 1; i++)
+            for (int i = 0; i < userInput.Length - 1; i++)
             {
-                // Initialize an empty string to hold the rune pair
-                string runePair = "";
+                char currentRune = userInput[i];
 
                 // Check if the frequency of the current rune is greater than 1 in the runeFrequency dictionary
-                if (runeFrequency.ContainsKey(userInput[i]) && runeFrequency[userInput[i]] > 1)
+                if (runeFrequency.TryGetValue(currentRune, out int frequency) && frequency > 1)
                 {
-                    // Add the current rune to the runePair string twice
-                    runePair += userInput[i];
-                    runePair += userInput[i];
+                    // Create the runePair string with the current rune twice
+                    string runePair = $"{currentRune}{currentRune}";
 
                     // Check if the sameGPFrequency dictionary already contains the current rune pair
                     if (sameGPFrequency.ContainsKey(runePair))
@@ -276,7 +267,7 @@ namespace LPD_Modern
             if (totalSameGPCount > 0)
             {
                 // Calculate the ratio of unique same GPFs in the text compared to the total count of same GPFs 
-                sameGPRatio = (double)sameGPFrequency.Count() / totalSameGPCount;
+                sameGPRatio = (double)sameGPFrequency.Count / totalSameGPCount;
             }
 
             // Return the calculated same GPF ratio

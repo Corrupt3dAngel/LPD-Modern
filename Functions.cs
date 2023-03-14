@@ -86,130 +86,103 @@ namespace LPD_Modern
         }
         public static StringBuilder ForwardShift(string[] lines, int shift, int[] keyValuesForLine, Dictionary<string, int> gematriaPrimus)
         {
-            // Define a string of delimiters that will be ignored during encryption/decryption
             const string delimiters = "-.&$§/•ᛄ%\" ";
-
-            // Initialize a StringBuilder to store the output for the given shift and key
             var outputForKey = new StringBuilder();
+            int keyLength = keyValuesForLine.Length;
+            int keyIndex = 0;
 
-            // Loop through each line of the input text
             foreach (var line in lines)
             {
-                // Initialize a StringBuilder to store the decrypted version of the line
                 var decryptedLine = new StringBuilder();
 
-                // Loop through each rune in the line
                 foreach (var rune in line)
                 {
-                    // Convert the rune to a string for processing
                     var runeString = rune.ToString();
 
-                    // If the rune is a delimiter or a duplicate "F", add it to the decrypted line as-is and continue
                     if (delimiters.Contains(runeString) || (runeString == "F" && (decryptedLine.Length == 0 || decryptedLine[decryptedLine.Length - 1] == 'F')))
                     {
                         decryptedLine.Append(runeString);
                         continue;
                     }
 
-                    // Get the decimal value of the rune using the gematriaPrimus dictionary
-                    var decimalValue = gematriaPrimus[runeString];
+                    int decimalValue = gematriaPrimus[runeString];
+                    int keyValue = 0;
 
-                    // Determine the key value for the current position in the decrypted line
-                    var keyValue = 0;
-                    if (keyValuesForLine.Length != 0)
+                    if (keyLength != 0)
                     {
-                        keyValue = keyValuesForLine[decryptedLine.Length % keyValuesForLine.Length];
+                        keyValue = keyValuesForLine[keyIndex % keyLength];
+                        keyIndex++;
                     }
 
-                    // Apply the shift to the decimal value and key value to obtain the shifted value
-                    var shiftedValue = (decimalValue - keyValue + 29 + shift) % 29;
-
-                    // Use the shifted value to get the corresponding shifted rune from the runeArray
+                    int shiftedValue = (decimalValue - keyValue + 29 + shift) % 29;
                     var shiftedRune = Functions.runeArray[shiftedValue];
-
-                    // Use the GetLatinEquivalent method to get the Latin equivalent of the shifted rune
                     var latinEquivalent = Functions.GetLatinEquivalent(shiftedRune);
 
-                    // Append the Latin equivalent to the decrypted line
                     decryptedLine.Append(latinEquivalent);
 
-                    // If the original rune was an "F", add a duplicate "F" to the decrypted line
                     if (runeString == "F")
                     {
                         decryptedLine.Append(runeString);
                     }
                 }
 
-                // Append the decrypted line to the output StringBuilder with a newline character
                 outputForKey.AppendLine(decryptedLine.ToString());
             }
 
-            // Return the final decrypted output for the given shift and key
             return outputForKey;
         }
+
         public static StringBuilder ReverseShift(string[] lines, int shift, int[] keyValuesForLine, Dictionary<string, int> gematriaPrimus)
         {
-            // Define a string of delimiters that will be ignored during encryption/decryption
             const string delimiters = "-.&$§/•ᛄ%\" ";
-
-            // Initialize a StringBuilder to store the output for the given shift and key
             var outputForKey = new StringBuilder();
+            int keyLength = keyValuesForLine.Length;
+            int keyIndex = 0;
 
-            // Loop through each line of the input text
             foreach (var line in lines)
             {
-                // Initialize a StringBuilder to store the decrypted version of the line
                 var decryptedLine = new StringBuilder();
 
-                // Loop through each rune in the line
                 foreach (var rune in line)
                 {
-                    // Convert the rune to a string for processing
                     var runeString = rune.ToString();
 
-                    // If the rune is a delimiter or a duplicate "F", add it to the decrypted line as-is and continue
                     if (delimiters.Contains(runeString) || (runeString == "F" && (decryptedLine.Length == 0 || decryptedLine[decryptedLine.Length - 1] == 'F')))
                     {
                         decryptedLine.Append(runeString);
                         continue;
                     }
 
-                    // Get the decimal value of the rune using the gematriaPrimus dictionary
-                    var decimalValue = gematriaPrimus[runeString];
+                    int decimalValue = gematriaPrimus[runeString];
 
-                    // Apply the reverse shift to the decimal value if the shift is not zero
                     if (shift != 0)
                     {
                         decimalValue = (decimalValue - shift + 29) % 29;
                     }
 
-                    // Determine the key value for the current position in the decrypted line
-                    var keyValue = keyValuesForLine.Length != 0 ? keyValuesForLine[decryptedLine.Length % keyValuesForLine.Length] : 0;
+                    int keyValue = 0;
 
-                    // Apply the key value and reverse shift to obtain the shifted value
-                    var shiftedValue = (decimalValue - keyValue + 29) % 29;
+                    if (keyLength != 0)
+                    {
+                        keyValue = keyValuesForLine[keyIndex % keyLength];
+                        keyIndex++;
+                    }
 
-                    // Use the shifted value to get the corresponding shifted rune from the runeArray
+                    int shiftedValue = (decimalValue - keyValue + 29) % 29;
                     var shiftedRune = Functions.runeArray[shiftedValue];
-
-                    // Use the GetLatinEquivalent method to get the Latin equivalent of the shifted rune
                     var latinEquivalent = Functions.GetLatinEquivalent(shiftedRune);
 
-                    // Append the Latin equivalent to the decrypted line
                     decryptedLine.Append(latinEquivalent);
 
-                    // If the original rune was an "F", add a duplicate "F" to the decrypted line
                     if (runeString == "F")
                     {
                         decryptedLine.Append(runeString);
                     }
                 }
 
-                // Append the decrypted line to the output StringBuilder with a newline character
                 outputForKey.AppendLine(decryptedLine.ToString());
             }
 
-            // Return the final decrypted output for the given shift and key
             return outputForKey;
         }
 
@@ -231,73 +204,13 @@ namespace LPD_Modern
 
             }
         }
-        /*
-         * The TranspositionDecrypt function created by alekhya63 yields very similar results to my TranspositionCipher function.
-         * 
-        private static int[] IndexesPadCharacter(string key)
-        {
-            int LengthofKey = key.Length;
-            int[] countOfIndexes = new int[LengthofKey];
-            List<KeyValuePair<int, char>> setKey = new List<KeyValuePair<int, char>>();
-            int position;
-
-            for (position = 0; position < LengthofKey; ++position)
-                setKey.Add(new KeyValuePair<int, char>(position, key[position]));
-
-            setKey.Sort(
-                delegate (KeyValuePair<int, char> pair1, KeyValuePair<int, char> pair2) {
-                    return pair1.Value.CompareTo(pair2.Value);
-                }
-            );
-
-            for (position = 0; position < LengthofKey; ++position)
-                countOfIndexes[setKey[position].Key] = position;
-
-            return countOfIndexes;
-        }
         
-        public static string TranspositionDecrypt(string cipherText, string key)
-        {
-            StringBuilder plainText = new StringBuilder();
-            int countOfChars = cipherText.Length;
-            int matrixColumns = (int)Math.Ceiling((double)countOfChars / key.Length);
-            int matrixRows = key.Length;
-            char[,] charactersOfRows = new char[matrixRows, matrixColumns];
-            char[,] charactersOfColumns = new char[matrixColumns, matrixRows];
-            char[,] columnCharsUnsorted = new char[matrixColumns, matrixRows];
-            int currentRowOfMatrix, currentColumnOfMatrix, i, j;
-            int[] Indexes = IndexesPadCharacter(key);
-
-            for (i = 0; i < countOfChars; ++i)
-            {
-                currentRowOfMatrix = i / matrixColumns;
-                currentColumnOfMatrix = i % matrixColumns;
-                charactersOfRows[currentRowOfMatrix, currentColumnOfMatrix] = cipherText[i];
-            }
-
-            for (i = 0; i < matrixRows; ++i)
-                for (j = 0; j < matrixColumns; ++j)
-                    charactersOfColumns[j, i] = charactersOfRows[i, j];
-
-            for (i = 0; i < matrixColumns; ++i)
-                for (j = 0; j < matrixRows; ++j)
-                    columnCharsUnsorted[i, j] = charactersOfColumns[i, Indexes[j]];
-
-            for (i = 0; i < countOfChars; ++i)
-            {
-                currentRowOfMatrix = i / matrixRows;
-                currentColumnOfMatrix = i % matrixRows;
-                plainText.Append(columnCharsUnsorted[currentRowOfMatrix, currentColumnOfMatrix]);
-            }
-            //convert plaintext to string
-            return plainText.ToString();
-        }
-        */
         public static char[,] TransposeGrid(char[,] grid, int[] key)
         {
             int numRows = grid.GetLength(0);
             int numCols = grid.GetLength(1);
             char[,] newGrid = new char[numRows, numCols];
+
             for (int i = 0; i < key.Length; i++)
             {
                 int oldIndex = key[i] - 1;
@@ -306,85 +219,50 @@ namespace LPD_Modern
                     newGrid[row, i] = grid[row, oldIndex];
                 }
             }
+
             return newGrid;
         }
 
         public static string TranspositionCipher(string inputText, string keyText)
         {
-            // Remove any spaces from the input text and key
             inputText = inputText.Replace(" ", "");
             keyText = keyText.Replace(" ", "");
 
-            // Convert the key permutation to an integer array
-            int[] key = new int[keyText.Length];
-            for (int i = 0; i < keyText.Length; i++)
-            {
-                if (!int.TryParse(keyText[i].ToString(), out key[i]))
-                {
-                    throw new ArgumentException("Invalid transposition key: " + keyText);
-                }
-            }
+            int[] key = keyText.Select(c => int.Parse(c.ToString())).ToArray();
 
-            // Determine the number of rows and columns in the grid
             int numRows = keyText.Length;
             int numCols = (int)Math.Ceiling((double)inputText.Length / numRows);
 
-            // Check if the input text needs padding with spaces to fill the grid
             int numSpaces = numRows * numCols - inputText.Length;
             if (numSpaces > 0)
             {
                 inputText += new string(' ', numSpaces);
             }
 
-            // Create a character array to represent the grid
             char[,] grid = new char[numRows, numCols];
-
-            // Fill the grid with the input text, row by row
             int index = 0;
-            for (int row = 0; row < numRows; row++)
-            {
-                for (int col = 0; col < numCols; col++)
-                {
-                    if (index >= inputText.Length)
-                    {
-                        grid[row, col] = ' ';
-                    }
-                    else
-                    {
-                        grid[row, col] = inputText[index];
-                    }
-                    index++;
-                }
-            }
-
-            // Rearrange the columns of the grid according to the key permutation
-            char[,] newGrid = new char[numRows, numCols];
-            for (int i = 0; i < key.Length; i++)
-            {
-                int oldIndex = key[i] - 1;
-                for (int row = 0; row < numRows; row++)
-                {
-                    newGrid[row, i] = grid[row, oldIndex];
-                }
-            }
-
-            // Read the plaintext message column by column from the rearranged grid
-            StringBuilder plainTextBuilder = new StringBuilder();
             for (int col = 0; col < numCols; col++)
             {
                 for (int row = 0; row < numRows; row++)
                 {
-                    if (newGrid[row, col] != '\0' && newGrid[row, col] != ' ')
+                    grid[row, col] = inputText[index++];
+                }
+            }
+
+            StringBuilder plainTextBuilder = new StringBuilder();
+            foreach (int keyIndex in key)
+            {
+                int oldIndex = keyIndex - 1;
+                for (int row = 0; row < numRows; row++)
+                {
+                    if (grid[row, oldIndex] != ' ')
                     {
-                        plainTextBuilder.Append(newGrid[row, col]);
+                        plainTextBuilder.Append(grid[row, oldIndex]);
                     }
                 }
             }
 
-            // Convert the StringBuilder to a string
-            string plainText = plainTextBuilder.ToString();
-
-            return plainText;
+            return plainTextBuilder.ToString();
         }
 
         // Define an array of RuneData objects to represent each rune
