@@ -847,7 +847,7 @@
             this.flatTextBox18.BackColor = System.Drawing.Color.Transparent;
             this.flatTextBox18.FocusOnHover = false;
             this.flatTextBox18.Hint = "";
-            this.flatTextBox18.Location = new System.Drawing.Point(460, 178);
+            this.flatTextBox18.Location = new System.Drawing.Point(458, 178);
             this.flatTextBox18.MaxLength = 32767;
             this.flatTextBox18.Multiline = false;
             this.flatTextBox18.Name = "flatTextBox18";
@@ -1897,7 +1897,7 @@
         '\"',
         '\'',
         '\''};
-            this.fastColoredTextBox5.AutoScrollMinSize = new System.Drawing.Size(581, 18);
+            this.fastColoredTextBox5.AutoScrollMinSize = new System.Drawing.Size(222, 18);
             this.fastColoredTextBox5.BackBrush = null;
             this.fastColoredTextBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.fastColoredTextBox5.BookmarkColor = System.Drawing.Color.Blue;
@@ -1916,7 +1916,7 @@
             this.fastColoredTextBox5.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("fastColoredTextBox5.ServiceColors")));
             this.fastColoredTextBox5.Size = new System.Drawing.Size(541, 367);
             this.fastColoredTextBox5.TabIndex = 33;
-            this.fastColoredTextBox5.Text = "Columnar Transposition / write by rows, read by colunms";
+            this.fastColoredTextBox5.Text = "Columnar Transposition";
             this.fastColoredTextBox5.Zoom = 100;
             // 
             // materialButton40

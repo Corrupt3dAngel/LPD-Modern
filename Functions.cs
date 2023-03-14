@@ -24,27 +24,20 @@ namespace LPD_Modern
         // Get the numeric equivalent of a rune
         public static int GetNumericEquivalent(string rune)
         {
-            // Check if the input rune is a comma, which is not valid for the Vigenere key
-            if (rune == ",")
+            if (string.IsNullOrEmpty(rune) || rune == ",")
             {
-                // Throw an ArgumentException with an error message indicating that commas are not valid runes
-                throw new ArgumentException("Commas are not valid runes and should not be included in the Vigenere key.");
+                // Throw an ArgumentException with an error message indicating that the input is invalid
+                throw new ArgumentException("Invalid input. Commas and empty strings are not valid runes and should not be included in the Vigenere key.");
             }
 
-            // Search for the input rune in the array of runeData objects
             var runeData = runeDataArray.FirstOrDefault(r => r.Rune == rune);
             if (runeData != null)
             {
-                // If the input rune is found in the array, return its NumericEquivalent property
                 return runeData.NumericEquivalent;
             }
-            else
-            {
-                // If the input rune is not found in the array, display an error message to the user
-                MessageBox.Show("Please enter a valid key.");
-                // Throw an ArgumentException with an error message indicating that the input rune is invalid
-                throw new ArgumentException("Invalid rune: " + rune);
-            }
+
+            // Throw an ArgumentException with an error message indicating that the input rune is invalid
+            throw new ArgumentException($"Invalid rune: {rune}");
         }
 
         public static string GetLatinEquivalent(string rune)
@@ -99,7 +92,8 @@ namespace LPD_Modern
                 {
                     var runeString = rune.ToString();
 
-                    if (delimiters.Contains(runeString) || (runeString == "F" && (decryptedLine.Length == 0 || decryptedLine[decryptedLine.Length - 1] == 'F')))
+                    // If the rune is a delimiter, a number, or a special character, ignore it
+                    if (delimiters.Contains(runeString) || !gematriaPrimus.ContainsKey(runeString) || (runeString == "F" && (decryptedLine.Length == 0 || decryptedLine[decryptedLine.Length - 1] == 'F')))
                     {
                         decryptedLine.Append(runeString);
                         continue;
@@ -147,7 +141,8 @@ namespace LPD_Modern
                 {
                     var runeString = rune.ToString();
 
-                    if (delimiters.Contains(runeString) || (runeString == "F" && (decryptedLine.Length == 0 || decryptedLine[decryptedLine.Length - 1] == 'F')))
+                    // If the rune is a delimiter, a number, or a special character, ignore it
+                    if (delimiters.Contains(runeString) || !gematriaPrimus.ContainsKey(runeString) || (runeString == "F" && (decryptedLine.Length == 0 || decryptedLine[decryptedLine.Length - 1] == 'F')))
                     {
                         decryptedLine.Append(runeString);
                         continue;

@@ -505,9 +505,9 @@ namespace LPD_Modern
             double bigramRatio = Cryptanalysis.CalculateBigramRatio(bigramFrequency, bigramFrequency.Sum(pair => pair.Value));
 
             // Calculate the bigram peak and bigram low of the input in parallel
-            Tuple<double, double> bigramPeakAndLow = await Task.Run(() => Cryptanalysis.CalculateBigramPeakAndLow(bigramFrequency, userInput.Length));
-            double bigramPeak = bigramPeakAndLow.Item1; //Change Format to [00.0, 00.0, 00.0]
-            double bigramLow = bigramPeakAndLow.Item2;  //Change Format to [00.0, 00.0, 00.0]
+            (double BigramPeak, double BigramLow) bigramPeakAndLow = await Task.Run(() => Cryptanalysis.CalculateBigramPeakAndLow(bigramFrequency, userInput.Length));
+            double bigramPeak = bigramPeakAndLow.Item1;
+            double bigramLow = bigramPeakAndLow.Item2;  
 
             // Calculate the same-GP ratio of the input in parallel
             Dictionary<string, int> sameGPFrequency = await Task.Run(() => Cryptanalysis.GetSameGPFrequency(userInput, runeFrequency));
@@ -593,8 +593,7 @@ namespace LPD_Modern
         private void materialButton1_Click(object sender, EventArgs e)
         {
             // Read input values
-            var shift = int.TryParse(Interaction.InputBox("Enter shift value:", "Shift"), out int shiftValue) ? shiftValue : 0;
-            if (shift == 0)
+            if (!int.TryParse(Interaction.InputBox("Enter shift value:", "Shift"), out int shift))
             {
                 MessageBox.Show("Please enter a valid shift value.");
                 return;
@@ -609,21 +608,20 @@ namespace LPD_Modern
             StringBuilder output = new StringBuilder();
             for (int keyIndex = 0; keyIndex < keyValues.Length; keyIndex++)
             {
-                // Display output for shift 0 first
-                var zeroShiftOutput = Functions.ForwardShift(lines, 0, keyValues[keyIndex], gematriaPrimus);
-                output.AppendLine($"(Key-{keyIndex + 1}) (Shift-0) (No-Shift)");
-                output.AppendLine(zeroShiftOutput.ToString());
-
-                // Display output for other shifts
-                for (int currentShift = 1; currentShift <= shift; currentShift++)
+                for (int currentShift = 0; currentShift <= shift; currentShift++)
                 {
+                    var shiftType = currentShift == 0 ? "No-Shift" : $"Shift-{currentShift}";
                     var forwardShiftOutput = Functions.ForwardShift(lines, currentShift, keyValues[keyIndex], gematriaPrimus);
-                    output.AppendLine($"(Key-{keyIndex + 1}) (Shift-{currentShift}) (Forward Shift)");
+                    var reverseShiftOutput = Functions.ReverseShift(lines, currentShift, keyValues[keyIndex], gematriaPrimus);
+
+                    output.AppendLine($"(Key-{keyIndex + 1}) ({shiftType}) (Forward Shift)");
                     output.AppendLine(forwardShiftOutput.ToString());
 
-                    var reverseShiftOutput = Functions.ReverseShift(lines, currentShift, keyValues[keyIndex], gematriaPrimus);
-                    output.AppendLine($"(Key-{keyIndex + 1}) (Shift-{currentShift}) (Reverse Shift)");
-                    output.AppendLine(reverseShiftOutput.ToString());
+                    if (currentShift > 0)
+                    {
+                        output.AppendLine($"(Key-{keyIndex + 1}) ({shiftType}) (Reverse Shift)");
+                        output.AppendLine(reverseShiftOutput.ToString());
+                    }
                 }
             }
 
@@ -713,21 +711,13 @@ namespace LPD_Modern
                     // Convert the current rune to its decimal value using the Gematria Primus dictionary
                     int decimalValue = gematriaPrimus[rune];
 
-                    // Output debugging information about the numeric equivalent of the rune
-                    Debug.WriteLine($"Numeric equivalent of '{rune}': {decimalValue}");
-
                     // Get the key value for the current index and shift the decimal value by the key value
                     int keyValue = keyValues[keyIndex % keyValues.Length];
                     int shiftedValue = (decimalValue - keyValue + 29) % 29;
 
-                    // Output debugging information about the shifted value and its runic and Latin equivalents
-                    Debug.WriteLine($"Shifted value for '{rune}': {shiftedValue}");
+                    // Get the shifted rune and its Latin equivalent and add the Latin equivalent to the decrypted line
                     string shiftedRune = Functions.runeArray[shiftedValue];
-                    Debug.WriteLine($"Runic equivalent of shifted value ({shiftedValue}): {shiftedRune}");
                     string latinEquivalent = Functions.GetLatinEquivalent(shiftedRune);
-                    Debug.WriteLine($"Latin equivalent of '{shiftedRune}': {latinEquivalent}");
-
-                    // Add the Latin equivalent to the decrypted line
                     decryptedLine += latinEquivalent;
 
                     // Increment the key index
@@ -759,7 +749,7 @@ namespace LPD_Modern
         }
 
 
-        private void fastColoredTextBox3_Load(object sender, EventArgs e)
+            private void fastColoredTextBox3_Load(object sender, EventArgs e)
         {
             // Define an array of delimiters to use for word counting
             string[] delimiters = { " ", "\r\n", "\t", "\n", "\r", ",", ".", "!", "?", ";", ":", "-", "_", "\"", "'", "(", ")", "{", "}", "[", "]" };

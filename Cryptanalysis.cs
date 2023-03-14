@@ -39,11 +39,11 @@ namespace LPD_Modern
             // Initialize the index of coincidence (IoC) to 0
             double ioc = 0;
 
-            // Loop through each key-value pair in the rune frequency dictionary
-            foreach (var pair in runeFrequency)
+            // Loop through each value in the rune frequency dictionary
+            foreach (int value in runeFrequency.Values)
             {
                 // Calculate the contribution of the current rune to the IoC formula
-                ioc += pair.Value * (pair.Value - 1);
+                ioc += value * (value - 1);
             }
 
             // Complete the IoC formula by dividing by the total number of rune pairs in the text
@@ -52,6 +52,7 @@ namespace LPD_Modern
             // Return the calculated IoC value
             return ioc;
         }
+
         public static double CalculateEntropy(Dictionary<char, int> runeFrequency, int totalRuneCount)
         {
             // Initialize the entropy to 0
@@ -148,14 +149,14 @@ namespace LPD_Modern
             // If there are bigrams in the text, calculate the ratio of unique bigrams to total bigrams
             if (totalBigramCount > 0)
             {
-                bigramRatio = (double)bigramFrequency.Count() / totalBigramCount;
+                bigramRatio = (double)bigramFrequency.Count / totalBigramCount;
             }
 
             // Return the calculated bigram ratio
             return bigramRatio;
         }
 
-        public static Tuple<double, double> CalculateBigramPeakAndLow(Dictionary<string, int> bigramFrequency, int totalBigramCount)
+        public static (double BigramPeak, double BigramLow) CalculateBigramPeakAndLow(Dictionary<string, int> bigramFrequency, int totalBigramCount)
         {
             // Initialize the bigram peak and low values to 0
             double bigramPeak = 0;
@@ -164,16 +165,22 @@ namespace LPD_Modern
             // If there are bigrams in the text, calculate the maximum and minimum bigram frequencies
             if (totalBigramCount > 0)
             {
-                double maxBigramFrequency = bigramFrequency.Max(pair => pair.Value);
-                double minBigramFrequency = bigramFrequency.Min(pair => pair.Value);
+                int maxBigramFrequency = int.MinValue;
+                int minBigramFrequency = int.MaxValue;
+
+                foreach (var pair in bigramFrequency)
+                {
+                    if (pair.Value > maxBigramFrequency) maxBigramFrequency = pair.Value;
+                    if (pair.Value < minBigramFrequency) minBigramFrequency = pair.Value;
+                }
 
                 // Calculate the bigram peak and low values as a fraction of the total number of bigrams
-                bigramPeak = maxBigramFrequency / totalBigramCount;
-                bigramLow = minBigramFrequency / totalBigramCount;
+                bigramPeak = (double)maxBigramFrequency / totalBigramCount;
+                bigramLow = (double)minBigramFrequency / totalBigramCount;
             }
 
             // Return a tuple containing the calculated bigram peak and low values
-            return Tuple.Create(bigramPeak, bigramLow);
+            return (BigramPeak: bigramPeak, BigramLow: bigramLow);
         }
 
         public static Dictionary<string, int> GetTrigramFrequency(string userInput)
@@ -273,6 +280,7 @@ namespace LPD_Modern
             // Return the calculated same GPF ratio
             return sameGPRatio;
         }
+
 
         public static Dictionary<char, double> CalculateLetterFrequency(string text)
         {
