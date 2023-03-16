@@ -4,7 +4,6 @@ LPDecrypt is my crappy software application that specializes in decrypting the c
 
 Known Issues
 
-Limited accuracy in general.
 Limited accuracy in Cryptoanalysis.
 
 
