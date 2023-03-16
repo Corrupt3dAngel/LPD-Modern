@@ -635,14 +635,7 @@ namespace LPD_Modern
             }
 
             string key = string.IsNullOrEmpty(fastColoredTextBox2.Text) ? "" : fastColoredTextBox2.Text.Replace("\r\n", "").Replace(" ", "");
-            string[] lines = fastColoredTextBox1.Lines.ToArray();
-
-            // Remove interrupter runes from the input text
-            for (int i = 0; i < lines.Length; i++)
-            {
-                lines[i] = RemoveInterrupterRunes(lines[i]);
-            }
-
+            var lines = fastColoredTextBox1.Lines.Select(RemoveInterrupterRunes).ToArray();
             Dictionary<string, int> gematriaPrimus = Functions.gematriaPrimus;
             int[][] keyValues = key.Equals("Keys are applied automatically") ? new int[][] { new int[0] } : key.Split(',').Select(k => k.ToCharArray().Select(c => Functions.GetNumericEquivalent(c.ToString())).ToArray()).ToArray();
 
@@ -669,7 +662,7 @@ namespace LPD_Modern
 
             // Display output
             fastColoredTextBox3.Clear();
-            fastColoredTextBox3.Text = output.ToString(); 
+            fastColoredTextBox3.Text = output.ToString();
         }
 
         private void materialButton21_Click(object sender, EventArgs e)

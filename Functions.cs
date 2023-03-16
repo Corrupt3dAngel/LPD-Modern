@@ -11,15 +11,15 @@ namespace LPD_Modern
     internal class Functions
     {
         /*    Using several dictionaries may not be the most efficient or elegant solution, but it gets the job done. Please bear with me. :/   */
-        public static readonly string[] runeArray = { "ᚠ", "ᚢ", "ᚦ", "ᚩ", "ᚱ", "ᚳ", "ᚷ", "ᚹ", "ᚻ", "ᚾ", "ᛁ", "ᛂ", "ᛇ", "ᛈ", "ᛉ", "ᛋ", "ᛏ", "ᛒ", "ᛖ", "ᛗ", "ᛚ", "ᛝ", "ᛟ", "ᛞ", "ᚪ", "ᚫ", "ᚣ", "ᛡ", "ᛠ", "ᛄ" };
+        public static readonly string[] runeArray = { "ᚠ", "ᚢ", "ᚦ", "ᚩ", "ᚱ", "ᚳ", "ᚷ", "ᚹ", "ᚻ", "ᚾ", "ᛁ", "ᛂ", "ᛇ", "ᛈ", "ᛉ", "ᛋ", "ᛏ", "ᛒ", "ᛖ", "ᛗ", "ᛚ", "ᛝ", "ᛟ", "ᛞ", "ᚪ", "ᚫ", "ᚣ", "ᛡ", "ᛠ" };
         public static readonly int[] numericArray = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 };
         public static readonly int[] primeArray = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109 };
         public static readonly Dictionary<string, int> gematriaPrimus = new Dictionary<string, int> { { "ᚠ", 0 }, { "ᚢ", 1 }, { "ᚦ", 2 }, { "ᚩ", 3 }, { "ᚱ", 4 }, { "ᚳ", 5 }, { "ᚷ", 6 }, { "ᚹ", 7 }, { "ᚻ", 8 }, { "ᚾ", 9 }, { "ᛁ", 10 }, { "ᛂ", 11 }, { "ᛄ", 11 }, { "ᛇ", 12 }, { "ᛈ", 13 }, { "ᛉ", 14 }, { "ᛋ", 15 }, { "ᛏ", 16 }, { "ᛒ", 17 }, { "ᛖ", 18 }, { "ᛗ", 19 }, { "ᛚ", 20 }, { "ᛝ", 21 }, { "ᛟ", 22 }, { "ᛞ", 23 }, { "ᚪ", 24 }, { "ᚫ", 25 }, { "ᚣ", 26 }, { "ᛡ", 27 }, { "ᛠ", 28 } };
         public static readonly Dictionary<char, int> NumericEquivalent = new Dictionary<char, int> { { 'ᚠ', 0 }, { 'ᚢ', 1 }, { 'ᚦ', 2 }, { 'ᚩ', 3 }, { 'ᚱ', 4 }, { 'ᚳ', 5 }, { 'ᚷ', 6 }, { 'ᚹ', 7 }, { 'ᚻ', 8 }, { 'ᚾ', 9 }, { 'ᛁ', 10 }, { 'ᛂ', 11 }, { 'ᛄ', 11 }, { 'ᛇ', 12 }, { 'ᛈ', 13 }, { 'ᛉ', 14 }, { 'ᛋ', 15 }, { 'ᛏ', 16 }, { 'ᛒ', 17 }, { 'ᛖ', 18 }, { 'ᛗ', 19 }, { 'ᛚ', 20 }, { 'ᛝ', 21 }, { 'ᛟ', 22 }, { 'ᛞ', 23 }, { 'ᚪ', 24 }, { 'ᚫ', 25 }, { 'ᚣ', 26 }, { 'ᛡ', 27 }, { 'ᛠ', 28 } };
         public static readonly Dictionary<char, int> PrimeEquivalent = new Dictionary<char, int> { { 'ᚠ', 2 }, { 'ᚢ', 3 }, { 'ᚦ', 5 }, { 'ᚩ', 7 }, { 'ᚱ', 11 }, { 'ᚳ', 13 }, { 'ᚷ', 17 }, { 'ᚹ', 19 }, { 'ᚻ', 23 }, { 'ᚾ', 29 }, { 'ᛁ', 31 }, { 'ᛂ', 37 }, { 'ᛄ', 37 }, { 'ᛇ', 41 }, { 'ᛈ', 43 }, { 'ᛉ', 47 }, { 'ᛋ', 53 }, { 'ᛏ', 59 }, { 'ᛒ', 61 }, { 'ᛖ', 67 }, { 'ᛗ', 71 }, { 'ᛚ', 73 }, { 'ᛝ', 79 }, { 'ᛟ', 83 }, { 'ᛞ', 89 }, { 'ᚪ', 97 }, { 'ᚫ', 101 }, { 'ᚣ', 103 }, { 'ᛡ', 107 }, { 'ᛠ', 109 } };
         public static readonly Dictionary<string, string> atbashTable = new Dictionary<string, string> { { "ᚠ", "ᛠ" }, { "ᚢ", "ᛡ" }, { "ᚦ", "ᚣ" }, { "ᚩ", "ᚫ" }, { "ᚱ", "ᚪ" }, { "ᚳ", "ᛞ" }, { "ᚷ", "ᛟ" }, { "ᚹ", "ᛝ" }, { "ᚻ", "ᛚ" }, { "ᚾ", "ᛗ" }, { "ᛁ", "ᛖ" }, { "ᛂ", "ᛒ" }, { "ᛇ", "ᛏ" }, { "ᛈ", "ᛋ" }, { "ᛉ", "ᛉ" }, { "ᛋ", "ᛈ" }, { "ᛏ", "ᛇ" }, { "ᛒ", "ᛂ" }, { "ᛖ", "ᛁ" }, { "ᛗ", "ᚾ" }, { "ᛚ", "ᚻ" }, { "ᛝ", "ᚹ" }, { "ᛟ", "ᚷ" }, { "ᛞ", "ᚳ" }, { "ᚪ", "ᚱ" }, { "ᚫ", "ᚩ" }, { "ᚣ", "ᚦ" }, { "ᛡ", "ᚢ" }, { "ᛠ", "ᚠ" }, { "ᛄ", "ᛒ" } };
-        public static readonly Dictionary<char, string> DirectTranslation = new Dictionary<char, string> { { 'ᚠ', "F" }, { 'ᚢ', "V(U)" }, { 'ᚦ', "TH" }, { 'ᚩ', "O" }, { 'ᚱ', "R" }, { 'ᚳ', "C(K)" }, { 'ᚷ', "G" }, { 'ᚹ', "W" }, { 'ᚻ', "H" }, { 'ᚾ', "N" }, { 'ᛁ', "I" }, { 'ᛂ', "J" }, { 'ᛇ', "EO" }, { 'ᛈ', "P" }, { 'ᛉ', "X" }, { 'ᛋ', "S(Z)" }, { 'ᛏ', "T" }, { 'ᛒ', "B" }, { 'ᛖ', "E" }, { 'ᛗ', "M" }, { 'ᛚ', "L" }, { 'ᛝ', "NG(ING)" }, { 'ᛟ', "OE" }, { 'ᛞ', "D" }, { 'ᚪ', "A" }, { 'ᚫ', "AE" }, { 'ᚣ', "Y" }, { 'ᛡ', "IA(IO)" }, { 'ᛠ', "EA" }, { 'ᛄ', "J" }, };
-        public static readonly Dictionary<string, string> runicEquivalents = new Dictionary<string, string> { { "ᚪ", "A" }, { "ᚫ", "AE" }, { "ᛒ", "B" }, { "ᚳ", "C" }, { "ᛞ", "D" }, { "ᛖ", "E" }, { "ᛠ", "EA" }, { "ᛇ", "EO" }, { "ᚠ", "F" }, { "ᚷ", "G" }, { "ᚻ", "H" }, { "ᛁ", "I" }, { "ᛡ", "IA" }, { "ᛂ", "J" }, { "ᛚ", "L" }, { "ᛗ", "M" }, { "ᚾ", "N" }, { "ᚩ", "O" }, { "ᛟ", "OE" }, { "ᛈ", "P" }, { "ᚱ", "R" }, { "ᛋ", "S" }, { "ᛏ", "T" }, { "ᚦ", "TH" }, { "ᚢ", "U" }, { "ᚹ", "W" }, { "ᛉ", "X" }, { "ᚣ", "Y" }, { "ᛝ", "NG" } };
+        public static readonly Dictionary<char, string> DirectTranslation = new Dictionary<char, string> { { 'ᚠ', "F" }, { 'ᚢ', "V" }, { 'ᚦ', "TH" }, { 'ᚩ', "O" }, { 'ᚱ', "R" }, { 'ᚳ', "C" }, { 'ᚷ', "G" }, { 'ᚹ', "W" }, { 'ᚻ', "H" }, { 'ᚾ', "N" }, { 'ᛁ', "I" }, { 'ᛂ', "J" }, { 'ᛇ', "EO" }, { 'ᛈ', "P" }, { 'ᛉ', "X" }, { 'ᛋ', "S" }, { 'ᛏ', "T" }, { 'ᛒ', "B" }, { 'ᛖ', "E" }, { 'ᛗ', "M" }, { 'ᛚ', "L" }, { 'ᛝ', "NG" }, { 'ᛟ', "OE" }, { 'ᛞ', "D" }, { 'ᚪ', "A" }, { 'ᚫ', "AE" }, { 'ᚣ', "Y" }, { 'ᛡ', "IA" }, { 'ᛠ', "EA" }, { 'ᛄ', "J" }, };
+        public static readonly Dictionary<string, string> runicEquivalents = new Dictionary<string, string> { { "ᚪ", "A" }, { "ᚫ", "AE" }, { "ᛒ", "B" }, { "ᚳ", "C" }, { "ᛞ", "D" }, { "ᛖ", "E" }, { "ᛠ", "EA" }, { "ᛇ", "EO" }, { "ᚠ", "F" }, { "ᚷ", "G" }, { "ᚻ", "H" }, { "ᛁ", "I" }, { "ᛡ", "IA" }, { "ᛂ", "J" }, { "ᛄ", "J" }, { "ᛚ", "L" }, { "ᛗ", "M" }, { "ᚾ", "N" }, { "ᚩ", "O" }, { "ᛟ", "OE" }, { "ᛈ", "P" }, { "ᚱ", "R" }, { "ᛋ", "S" }, { "ᛏ", "T" }, { "ᚦ", "TH" }, { "ᚢ", "U" }, { "ᚹ", "W" }, { "ᛉ", "X" }, { "ᚣ", "Y" }, { "ᛝ", "NG" } };
 
         // Get the numeric equivalent of a rune
         public static int GetNumericEquivalent(string rune)
@@ -45,7 +45,7 @@ namespace LPD_Modern
             switch (rune)
             {
                 case "ᚠ": return "F";
-                case "ᚢ": return "V(U)";
+                case "ᚢ": return "V";
                 case "ᚦ": return "TH";
                 case "ᚩ": return "O";
                 case "ᚱ": return "R";
@@ -72,7 +72,7 @@ namespace LPD_Modern
                 case "ᚪ": return "A";
                 case "ᚫ": return "AE";
                 case "ᚣ": return "Y";
-                case "ᛡ": return "IA(IO)";
+                case "ᛡ": return "IA";
                 case "ᛠ": return "EA";
                 default: return "";
             }
