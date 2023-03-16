@@ -206,11 +206,6 @@ namespace LPD_Modern
 
         }
 
-        private void SidebarTimer_Tick(object sender, EventArgs e)
-        {
-
-        }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -805,7 +800,7 @@ namespace LPD_Modern
             string trimmedText = text1.Trim();
 
             // Split the text into sentences using regular expressions
-            string[] sentences = Regex.Split(text1, @"(?<=[.!?]|[\u2026]|[\u203D]|[\u2047-\u2049]|[\u3002]|[\uFE52-\uFE56])\s+(?=\p{Lu})");
+            string[] sentences = Regex.Split(text1, @"(?<=[./!?]|[\u2026]|[\u203D]|[\u2047-\u2049]|[\u3002]|[\uFE52-\uFE56])\s+(?=\p{Lu})");
 
             // Count the number of words, characters, characters excluding whitespaces, sentences, lines, and paragraphs in the text
             int sentenceCount = sentences.Length;
@@ -1607,11 +1602,6 @@ namespace LPD_Modern
         private void tabPage4_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void materialButton31_Click_2(object sender, EventArgs e)
-        {
-            
         }
     }
 }

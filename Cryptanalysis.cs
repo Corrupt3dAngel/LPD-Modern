@@ -87,6 +87,7 @@ namespace LPD_Modern
             // Return the calculated entropy value
             return entropy;
         }
+
         public static double ShannonEntropy(string input)
         {
             // get the length of the input string
@@ -281,7 +282,6 @@ namespace LPD_Modern
             return sameGPRatio;
         }
 
-
         public static Dictionary<char, double> CalculateLetterFrequency(string text)
         {
             // Create a new empty dictionary named letterFrequency
@@ -431,7 +431,6 @@ namespace LPD_Modern
             //Return the dictionary of similar grams in the input text
             return similarGrams;
         }
-
 
         public static double CalculateAvgLetterDistance(string userInput)
         {
@@ -594,6 +593,7 @@ namespace LPD_Modern
             }
             return avgLetterXRepeatDistance;
         }
+
         public static double CalculateAvgLetterFRepeatDistance(string userInput)
         {
             // Initialize variables to store the average distance between letter Fs and the number of letter Fs found

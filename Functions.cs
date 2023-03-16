@@ -77,9 +77,10 @@ namespace LPD_Modern
                 default: return "";
             }
         }
+
         public static StringBuilder ForwardShift(string[] lines, int shift, int[] keyValuesForLine, Dictionary<string, int> gematriaPrimus)
         {
-            const string delimiters = "-.&$§/•ᛄ%\" ";
+            const string delimiters = "-.&$§/•%\" ";
             var outputForKey = new StringBuilder();
             int keyLength = keyValuesForLine.Length;
             int keyIndex = 0;
@@ -128,7 +129,7 @@ namespace LPD_Modern
 
         public static StringBuilder ReverseShift(string[] lines, int shift, int[] keyValuesForLine, Dictionary<string, int> gematriaPrimus)
         {
-            const string delimiters = "-.&$§/•ᛄ%\" ";
+            const string delimiters = "-.&$§/•%\" ";
             var outputForKey = new StringBuilder();
             int keyLength = keyValuesForLine.Length;
             int keyIndex = 0;

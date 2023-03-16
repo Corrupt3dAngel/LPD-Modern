@@ -35,7 +35,6 @@
             this.MinimizeButton = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.SiderbarTimer = new System.Windows.Forms.Timer(this.components);
             this.tabPage_Modern_Black1 = new ToolsBox.TabPage_Modern_Black();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.materialButton10 = new MaterialSkin.Controls.MaterialButton();
@@ -239,11 +238,6 @@
             this.label1.Size = new System.Drawing.Size(105, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "LPDecrypt";
-            // 
-            // SiderbarTimer
-            // 
-            this.SiderbarTimer.Interval = 10;
-            this.SiderbarTimer.Tick += new System.EventHandler(this.SidebarTimer_Tick);
             // 
             // tabPage_Modern_Black1
             // 
@@ -1553,7 +1547,7 @@
         '\"',
         '\'',
         '\''};
-            this.fastColoredTextBox4.AutoScrollMinSize = new System.Drawing.Size(281, 18);
+            this.fastColoredTextBox4.AutoScrollMinSize = new System.Drawing.Size(252, 18);
             this.fastColoredTextBox4.BackBrush = null;
             this.fastColoredTextBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.fastColoredTextBox4.BookmarkColor = System.Drawing.Color.Blue;
@@ -1829,7 +1823,7 @@
         '\"',
         '\'',
         '\''};
-            this.fastColoredTextBox5.AutoScrollMinSize = new System.Drawing.Size(251, 18);
+            this.fastColoredTextBox5.AutoScrollMinSize = new System.Drawing.Size(222, 18);
             this.fastColoredTextBox5.BackBrush = null;
             this.fastColoredTextBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.fastColoredTextBox5.BookmarkColor = System.Drawing.Color.Blue;
@@ -2474,7 +2468,6 @@
         private Krypton.Toolkit.KryptonPalette kryptonPalette1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Timer SiderbarTimer;
         private System.Windows.Forms.Label MinimizeButton;
         private System.Windows.Forms.Label CloseButton;
         private ToolsBox.TabPage_Modern_Black tabPage_Modern_Black1;
