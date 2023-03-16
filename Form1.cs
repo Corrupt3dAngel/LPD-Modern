@@ -1,21 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Krypton;
 using FastColoredTextBoxNS;
 using Krypton.Toolkit;
 using System.IO;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Microsoft.VisualBasic;
 using System.Text.RegularExpressions;
-using System.Diagnostics;
-using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace LPD_Modern
 {
@@ -28,11 +24,8 @@ namespace LPD_Modern
             fastColoredTextBox3.TextChanged += fastColoredTextBox3_Load;
         }
         Point lastPoint;
-        public void MatchInterrupterRunes()
+        public string RemoveInterrupterRunes(string inputText) //Can be improved upon
         {
-            // Get the text from the FastColoredTextBox3 control
-            string inputText = fastColoredTextBox3.Text;
-
             // Retrieve the dictionary of runic letter equivalents
             Dictionary<string, string> runicEquivalents = Functions.runicEquivalents;
 
@@ -43,51 +36,169 @@ namespace LPD_Modern
             if (checkBox12.Checked)
             {
                 // If it is, add all interrupter runes to the list
-                interrupterRunes.AddRange(new string[] { "F", "U", "TH", "O", "R", "C", "G", "W", "H", "N", "I", "J", "EO", "P", "X", "S", "T", "B", "E", "M", "L", "ING", "OE", "D", "A", "AE", "Y", "IO", "EA" });
+                interrupterRunes.AddRange(new string[] { "ᚠ", "ᚢ", "ᚦ", "ᚩ", "ᚱ", "ᚳ", "ᚷ", "ᚹ", "ᚻ", "ᚾ", "ᛁ", "ᛂ", "ᛇ", "ᛈ", "ᛉ", "ᛋ", "ᛏ", "ᛒ", "ᛖ", "ᛗ", "ᛚ", "ᛝ", "ᛟ", "ᛞ", "ᚪ", "ᚫ", "ᚣ", "ᛡ", "ᛠ" });
             }
-            else
+            else if (checkBox13.Checked)
             {
-                // If not, add only the checked interrupter runes to the list
-                for (int i = 13; i <= 41; i++)
-                {
-                    if (Controls.Find("checkBox" + i.ToString(), true).FirstOrDefault() is CheckBox checkBox && checkBox.Checked)
-                    {
-                        interrupterRunes.Add(checkBox.Text);
-                    }
-                }
+                    // If it is, add all interrupter runes to the list
+                    interrupterRunes.AddRange(new string[] { "ᚠ" });
             }
+
+            //Don't Ask why. . .
+            if (checkBox14.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᚤ" });
+            }
+
+            if (checkBox15.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᚾ" });
+            }
+
+            if (checkBox16.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᛁ" });
+            }
+
+            if (checkBox17.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᛂ", "ᛄ" });
+            }
+
+            if (checkBox18.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᚦ" });
+            }
+
+            if (checkBox19.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᚩ" });
+            }
+
+            if (checkBox20.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᚱ" });
+            }
+
+            if (checkBox21.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᚳ" });
+            }
+
+            if (checkBox22.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᚷ" });
+            }
+
+            if (checkBox23.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᚹ" });
+            }
+
+            if (checkBox24.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᚺ" });
+            }
+
+            if (checkBox25.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᛇ" });
+            }
+
+            if (checkBox26.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᛈ" });
+            }
+
+            if (checkBox27.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᛉ" });
+            }
+
+            if (checkBox28.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᛋ" });
+            }
+
+            if (checkBox29.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᛏ" });
+            }
+
+            if (checkBox30.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᛒ" });
+            }
+
+            if (checkBox31.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᛖ" });
+            }
+
+            if (checkBox32.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᛗ" });
+            }
+
+            if (checkBox33.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᛚ" });
+            }
+
+            if (checkBox34.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᛝ" });
+            }
+
+            if (checkBox35.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᛟ" });
+            }
+
+            if (checkBox36.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᛞ" });
+            }
+
+            if (checkBox37.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᚪ" });
+            }
+
+            if (checkBox38.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᚫ" });
+            }
+
+            if (checkBox39.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᚣ" });
+            }
+
+            if (checkBox40.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᛡ" });
+            }
+            //Don't Ask why. . .
+            if (checkBox41.Checked)
+            {
+                interrupterRunes.AddRange(new string[] { "ᛠ" });
+            }
+
 
             // Iterate through each interrupter rune in the list
             foreach (string rune in interrupterRunes)
             {
-                string runicEquivalent;
+                // Create a regex pattern that matches the runic letter
+                string escapedRune = Regex.Escape(rune);
+                string regexPattern = $"{escapedRune}";
 
-                // Check if the runic letter has an equivalent in the dictionary
-                if (runicEquivalents.TryGetValue(rune, out runicEquivalent) || runicEquivalents.TryGetValue(rune.ToUpper(), out runicEquivalent))
-                {
-                    // If it does, create a regex pattern that matches the runic letter or its equivalent
-                    string escapedRunicEquivalent = Regex.Escape(runicEquivalent);
-                    string regexPattern = $"[{escapedRunicEquivalent}{escapedRunicEquivalent.ToLower()}][a-zA-Z]?";
-
-                    // Replace all instances of the runic letter or its equivalent in the input text
-                    inputText = Regex.Replace(inputText, regexPattern, "");
-
-                    // Also replace all instances of the original runic letter (in case it wasn't matched by the equivalent)
-                    regexPattern = $"[{rune}{rune.ToLower()}][a-zA-Z]?";
-                    inputText = Regex.Replace(inputText, regexPattern, "");
-                }
-                else
-                {
-                    // If the runic letter does not have an equivalent, create a regex pattern that matches the letter itself
-                    string regexPattern = $"[{rune}{rune.ToLower()}][a-zA-Z]?";
-
-                    // Replace all instances of the runic letter in the input text
-                    inputText = Regex.Replace(inputText, regexPattern, "");
-                }
+                // Replace all instances of the runic letter in the input text
+                inputText = Regex.Replace(inputText, regexPattern, "");
             }
 
-            // Set the updated text back into the FastColoredTextBox3 control
-            fastColoredTextBox3.Text = inputText;
+            // Return the updated input text
+            return inputText;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -402,88 +513,12 @@ namespace LPD_Modern
 
         private void materialButton32_Click(object sender, EventArgs e)
         {
-            // Set the desired line length for the output text (change this value as needed)
-            const int lineLength = 20;
 
-            // Initialize variables for counting the number of characters and the sum of numeric equivalents
-            int count = 0;
-            int totalSum = 0;
-
-            // Create a StringBuilder to efficiently build up the output text
-            StringBuilder outputTextBuilder = new StringBuilder();
-
-            // Iterate over each character in the input text of the "fastColoredTextBox3" control
-            foreach (char c in fastColoredTextBox3.Text)
-            {
-                // Retrieve the numeric equivalent of the current character from the cipher table
-                if (Functions.NumericEquivalent.TryGetValue(c, out int numericValue))
-                {
-                    // If the line is longer than the desired line length, start a new line
-                    if (count >= lineLength)
-                    {
-                        outputTextBuilder.AppendLine();
-                        count = 0;
-                    }
-
-                    // Add the numeric equivalent to the output text and update the count and total sum
-                    outputTextBuilder.Append(numericValue).Append(' ');
-                    totalSum += numericValue;
-                    count++;
-                }
-            }
-
-            // Add a newline character and the total sum to the end of the output text
-            outputTextBuilder.AppendLine().AppendFormat("Total Sum = {0}", totalSum);
-
-            // Set the text of the "fastColoredTextBox3" control to the output text
-            fastColoredTextBox3.Text = outputTextBuilder.ToString().TrimEnd();
         }
 
         private void materialButton31_Click(object sender, EventArgs e)
         {
-            // Get the input text from the "fastColoredTextBox3" control
-            string inputText = fastColoredTextBox3.Text;
 
-            // Retrieve the set of keys in the cipher table from a static class called "Functions"
-            HashSet<char> cipherTableKeys = new HashSet<char>(Functions.PrimeEquivalent.Keys);
-
-            // Set the desired line length for the output text (change this value as needed)
-            const int lineLength = 20;
-
-            // Initialize variables for counting the number of characters and the sum of prime equivalents
-            int count = 0;
-            int totalSum = 0;
-
-            // Create a StringBuilder to efficiently build up the output text
-            StringBuilder outputTextBuilder = inputText
-                .Where(cipherTableKeys.Contains) // Filter out characters not in the cipher table
-                .Aggregate(new StringBuilder(inputText.Length), (builder, c) => // Aggregate characters into a StringBuilder object
-                {
-                    // If the line is longer than the desired line length, start a new line
-                    if (count >= lineLength)
-                    {
-                        builder.AppendLine();
-                        count = 0;
-                    }
-
-                    // Retrieve the prime equivalent of the current character from the cipher table
-                    int primeEquivalent = Functions.PrimeEquivalent[c];
-
-                    // Add the prime equivalent to the output text and update the count and total sum
-                    builder.Append(primeEquivalent).Append(' ');
-                    totalSum += primeEquivalent;
-                    count++;
-
-                    // Return the StringBuilder object with the new character added
-                    return builder;
-                });
-
-            // Add a newline character and the total sum to the end of the output text
-            outputTextBuilder.AppendLine();
-            outputTextBuilder.AppendFormat("Total Sum = {0}", totalSum);
-
-            // Set the text of the "fastColoredTextBox3" control to the output text
-            fastColoredTextBox3.Text = outputTextBuilder.ToString().TrimEnd();
         }
 
         public async void fastColoredTextBox1_Load(object sender, EventArgs e)
@@ -507,7 +542,7 @@ namespace LPD_Modern
             // Calculate the bigram peak and bigram low of the input in parallel
             (double BigramPeak, double BigramLow) bigramPeakAndLow = await Task.Run(() => Cryptanalysis.CalculateBigramPeakAndLow(bigramFrequency, userInput.Length));
             double bigramPeak = bigramPeakAndLow.Item1;
-            double bigramLow = bigramPeakAndLow.Item2;  
+            double bigramLow = bigramPeakAndLow.Item2;
 
             // Calculate the same-GP ratio of the input in parallel
             Dictionary<string, int> sameGPFrequency = await Task.Run(() => Cryptanalysis.GetSameGPFrequency(userInput, runeFrequency));
@@ -601,6 +636,13 @@ namespace LPD_Modern
 
             string key = string.IsNullOrEmpty(fastColoredTextBox2.Text) ? "" : fastColoredTextBox2.Text.Replace("\r\n", "").Replace(" ", "");
             string[] lines = fastColoredTextBox1.Lines.ToArray();
+
+            // Remove interrupter runes from the input text
+            for (int i = 0; i < lines.Length; i++)
+            {
+                lines[i] = RemoveInterrupterRunes(lines[i]);
+            }
+
             Dictionary<string, int> gematriaPrimus = Functions.gematriaPrimus;
             int[][] keyValues = key.Equals("Keys are applied automatically") ? new int[][] { new int[0] } : key.Split(',').Select(k => k.ToCharArray().Select(c => Functions.GetNumericEquivalent(c.ToString())).ToArray()).ToArray();
 
@@ -627,14 +669,19 @@ namespace LPD_Modern
 
             // Display output
             fastColoredTextBox3.Clear();
-            fastColoredTextBox3.Text = output.ToString();
-            MatchInterrupterRunes();
+            fastColoredTextBox3.Text = output.ToString(); 
         }
 
         private void materialButton21_Click(object sender, EventArgs e)
         {
             // Get the text entered by the user in the "fastColoredTextBox4" control
             string inputText = fastColoredTextBox4.Text;
+
+            // Remove interrupter runes from the input text
+            for (int i = 0; i < inputText.Length; i++)
+            {
+                inputText = RemoveInterrupterRunes(inputText);
+            }
 
             // Create a new StringBuilder instance to efficiently build up the output string
             StringBuilder outputTextBuilder = new StringBuilder(inputText.Length);
@@ -663,9 +710,6 @@ namespace LPD_Modern
 
             // Set the text of the "fastColoredTextBox3" control to the resulting string
             fastColoredTextBox3.Text = outputTextBuilder.ToString();
-
-            // Call the MatchInterrupterRunes method to perform additional processing
-            MatchInterrupterRunes();
         }
 
         private void materialButton20_Click(object sender, EventArgs e)
@@ -676,6 +720,13 @@ namespace LPD_Modern
 
             // Split the cipher text into lines and create a dictionary for the Gematria Primus values
             string[] lines = fastColoredTextBox4.Lines.ToArray();
+
+            // Remove interrupter runes from the input text
+            for (int i = 0; i < lines.Length; i++)
+            {
+                lines[i] = RemoveInterrupterRunes(lines[i]);
+            }
+
             Dictionary<string, int> gematriaPrimus = Functions.gematriaPrimus;
 
             // Create an array of key values by converting each character to its numeric equivalent
@@ -745,11 +796,11 @@ namespace LPD_Modern
             // Display the output in the result text box
             fastColoredTextBox3.Clear();
             fastColoredTextBox3.Text = output;
-            MatchInterrupterRunes();
+            //MatchInterrupterRunes();
         }
 
 
-            private void fastColoredTextBox3_Load(object sender, EventArgs e)
+        private void fastColoredTextBox3_Load(object sender, EventArgs e)
         {
             // Define an array of delimiters to use for word counting
             string[] delimiters = { " ", "\r\n", "\t", "\n", "\r", ",", ".", "!", "?", ";", ":", "-", "_", "\"", "'", "(", ")", "{", "}", "[", "]" };
@@ -1066,48 +1117,6 @@ namespace LPD_Modern
             flatTextBox23.ReadOnly = true;
         }
 
-        private void materialButton35_Click(object sender, EventArgs e)
-        {
-            // Prompt the user to enter the search query
-            string searchQuery = Interaction.InputBox("Enter search query:", "Search");
-
-            // Create a StringReader to read the text line by line
-            using (var reader = new StringReader(fastColoredTextBox3.Text))
-            {
-                // Create a StringBuilder to build the modified text
-                var builder = new StringBuilder();
-                string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-                    // Perform a case-insensitive search for the search query in the line
-                    int index = line.IndexOf(searchQuery, StringComparison.OrdinalIgnoreCase);
-                    if (index != -1)
-                    {
-                        // Highlight the search query in the line
-                        line = line.Substring(0, index) + "<" + searchQuery + ">" + line.Substring(index + searchQuery.Length);
-
-                        // Append the modified line to the StringBuilder
-                        builder.AppendLine(line);
-
-                        // Set the text color of the highlighted search query
-                        fastColoredTextBox3.SelectionStart = builder.Length - (line.Length - index) + 1;
-                        fastColoredTextBox3.SelectionLength = searchQuery.Length;
-                        fastColoredTextBox3.SelectionColor = Color.Red;
-                    }
-                    else
-                    {
-                        // Append the original line to the StringBuilder
-                        builder.AppendLine(line);
-                    }
-                }
-
-                // Update the text in the FastColoredTextBox3
-                fastColoredTextBox3.BeginUpdate();
-                fastColoredTextBox3.Text = builder.ToString();
-                fastColoredTextBox3.EndUpdate();
-            }
-        }
-
         private void materialButton36_Click(object sender, EventArgs e)
         {
             // Get the current text in the fastColoredTextBox3 control
@@ -1403,6 +1412,12 @@ namespace LPD_Modern
                 // Get the transposition key from flatTextBox26
                 string keyText = flatTextBox26.Text;
 
+                // Remove interrupter runes from the input text
+                for (int i = 0; i < inputText.Length; i++)
+                {
+                    inputText = RemoveInterrupterRunes(inputText);
+                }
+
                 // Decrypt the input text using the transposition cipher and key
                 string plainText = Functions.TranspositionCipher(inputText, keyText);
 
@@ -1594,6 +1609,16 @@ namespace LPD_Modern
             // Clear the text of the "fastColoredTextBox5" control and set its text to the Atbash cipher text
             fastColoredTextBox5.Clear();
             fastColoredTextBox5.AppendText(atbashedText.ToString());
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialButton31_Click_2(object sender, EventArgs e)
+        {
+            
         }
     }
 }

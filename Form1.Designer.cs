@@ -91,9 +91,6 @@
             this.materialButton38 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton37 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton36 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton35 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton31 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton32 = new MaterialSkin.Controls.MaterialButton();
             this.fastColoredTextBox3 = new FastColoredTextBoxNS.FastColoredTextBox();
             this.materialButton9 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton11 = new MaterialSkin.Controls.MaterialButton();
@@ -1178,9 +1175,6 @@
             this.tabPage4.Controls.Add(this.materialButton38);
             this.tabPage4.Controls.Add(this.materialButton37);
             this.tabPage4.Controls.Add(this.materialButton36);
-            this.tabPage4.Controls.Add(this.materialButton35);
-            this.tabPage4.Controls.Add(this.materialButton31);
-            this.tabPage4.Controls.Add(this.materialButton32);
             this.tabPage4.Controls.Add(this.fastColoredTextBox3);
             this.tabPage4.Controls.Add(this.materialButton9);
             this.tabPage4.Controls.Add(this.materialButton11);
@@ -1191,13 +1185,14 @@
             this.tabPage4.Size = new System.Drawing.Size(684, 419);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Results";
+            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
             // flatTextBox24
             // 
             this.flatTextBox24.BackColor = System.Drawing.Color.Transparent;
             this.flatTextBox24.FocusOnHover = false;
             this.flatTextBox24.Hint = "";
-            this.flatTextBox24.Location = new System.Drawing.Point(545, 390);
+            this.flatTextBox24.Location = new System.Drawing.Point(544, 323);
             this.flatTextBox24.MaxLength = 32767;
             this.flatTextBox24.Multiline = false;
             this.flatTextBox24.Name = "flatTextBox24";
@@ -1215,7 +1210,7 @@
             this.flatTextBox19.BackColor = System.Drawing.Color.Transparent;
             this.flatTextBox19.FocusOnHover = false;
             this.flatTextBox19.Hint = "";
-            this.flatTextBox19.Location = new System.Drawing.Point(545, 357);
+            this.flatTextBox19.Location = new System.Drawing.Point(544, 290);
             this.flatTextBox19.MaxLength = 32767;
             this.flatTextBox19.Multiline = false;
             this.flatTextBox19.Name = "flatTextBox19";
@@ -1233,7 +1228,7 @@
             this.flatTextBox20.BackColor = System.Drawing.Color.Transparent;
             this.flatTextBox20.FocusOnHover = false;
             this.flatTextBox20.Hint = "";
-            this.flatTextBox20.Location = new System.Drawing.Point(545, 322);
+            this.flatTextBox20.Location = new System.Drawing.Point(544, 255);
             this.flatTextBox20.MaxLength = 32767;
             this.flatTextBox20.Multiline = false;
             this.flatTextBox20.Name = "flatTextBox20";
@@ -1251,7 +1246,7 @@
             this.flatTextBox21.BackColor = System.Drawing.Color.Transparent;
             this.flatTextBox21.FocusOnHover = false;
             this.flatTextBox21.Hint = "";
-            this.flatTextBox21.Location = new System.Drawing.Point(545, 287);
+            this.flatTextBox21.Location = new System.Drawing.Point(544, 220);
             this.flatTextBox21.MaxLength = 32767;
             this.flatTextBox21.Multiline = false;
             this.flatTextBox21.Name = "flatTextBox21";
@@ -1269,7 +1264,7 @@
             this.flatTextBox22.BackColor = System.Drawing.Color.Transparent;
             this.flatTextBox22.FocusOnHover = false;
             this.flatTextBox22.Hint = "";
-            this.flatTextBox22.Location = new System.Drawing.Point(545, 252);
+            this.flatTextBox22.Location = new System.Drawing.Point(544, 185);
             this.flatTextBox22.MaxLength = 32767;
             this.flatTextBox22.Multiline = false;
             this.flatTextBox22.Name = "flatTextBox22";
@@ -1287,7 +1282,7 @@
             this.flatTextBox23.BackColor = System.Drawing.Color.Transparent;
             this.flatTextBox23.FocusOnHover = false;
             this.flatTextBox23.Hint = "";
-            this.flatTextBox23.Location = new System.Drawing.Point(545, 217);
+            this.flatTextBox23.Location = new System.Drawing.Point(544, 150);
             this.flatTextBox23.MaxLength = 32767;
             this.flatTextBox23.Multiline = false;
             this.flatTextBox23.Name = "flatTextBox23";
@@ -1308,7 +1303,7 @@
             this.materialButton38.Depth = 0;
             this.materialButton38.HighEmphasis = true;
             this.materialButton38.Icon = null;
-            this.materialButton38.Location = new System.Drawing.Point(545, 183);
+            this.materialButton38.Location = new System.Drawing.Point(544, 98);
             this.materialButton38.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton38.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton38.Name = "materialButton38";
@@ -1329,7 +1324,7 @@
             this.materialButton37.Depth = 0;
             this.materialButton37.HighEmphasis = true;
             this.materialButton37.Icon = null;
-            this.materialButton37.Location = new System.Drawing.Point(545, 140);
+            this.materialButton37.Location = new System.Drawing.Point(544, 55);
             this.materialButton37.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton37.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton37.Name = "materialButton37";
@@ -1350,7 +1345,7 @@
             this.materialButton36.Depth = 0;
             this.materialButton36.HighEmphasis = true;
             this.materialButton36.Icon = null;
-            this.materialButton36.Location = new System.Drawing.Point(545, 97);
+            this.materialButton36.Location = new System.Drawing.Point(544, 12);
             this.materialButton36.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton36.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton36.Name = "materialButton36";
@@ -1362,69 +1357,6 @@
             this.materialButton36.UseAccentColor = false;
             this.materialButton36.UseVisualStyleBackColor = true;
             this.materialButton36.Click += new System.EventHandler(this.materialButton36_Click);
-            // 
-            // materialButton35
-            // 
-            this.materialButton35.AutoSize = false;
-            this.materialButton35.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton35.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton35.Depth = 0;
-            this.materialButton35.HighEmphasis = true;
-            this.materialButton35.Icon = null;
-            this.materialButton35.Location = new System.Drawing.Point(545, 54);
-            this.materialButton35.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton35.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton35.Name = "materialButton35";
-            this.materialButton35.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton35.Size = new System.Drawing.Size(136, 31);
-            this.materialButton35.TabIndex = 24;
-            this.materialButton35.Text = "Search";
-            this.materialButton35.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton35.UseAccentColor = false;
-            this.materialButton35.UseVisualStyleBackColor = true;
-            this.materialButton35.Click += new System.EventHandler(this.materialButton35_Click);
-            // 
-            // materialButton31
-            // 
-            this.materialButton31.AutoSize = false;
-            this.materialButton31.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton31.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton31.Depth = 0;
-            this.materialButton31.HighEmphasis = true;
-            this.materialButton31.Icon = null;
-            this.materialButton31.Location = new System.Drawing.Point(627, 11);
-            this.materialButton31.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton31.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton31.Name = "materialButton31";
-            this.materialButton31.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton31.Size = new System.Drawing.Size(55, 31);
-            this.materialButton31.TabIndex = 23;
-            this.materialButton31.Text = "Prime";
-            this.materialButton31.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton31.UseAccentColor = false;
-            this.materialButton31.UseVisualStyleBackColor = true;
-            this.materialButton31.Click += new System.EventHandler(this.materialButton31_Click);
-            // 
-            // materialButton32
-            // 
-            this.materialButton32.AutoSize = false;
-            this.materialButton32.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton32.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton32.Depth = 0;
-            this.materialButton32.HighEmphasis = true;
-            this.materialButton32.Icon = null;
-            this.materialButton32.Location = new System.Drawing.Point(545, 12);
-            this.materialButton32.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton32.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton32.Name = "materialButton32";
-            this.materialButton32.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton32.Size = new System.Drawing.Size(74, 31);
-            this.materialButton32.TabIndex = 22;
-            this.materialButton32.Text = "Numeric";
-            this.materialButton32.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton32.UseAccentColor = false;
-            this.materialButton32.UseVisualStyleBackColor = true;
-            this.materialButton32.Click += new System.EventHandler(this.materialButton32_Click);
             // 
             // fastColoredTextBox3
             // 
@@ -1439,7 +1371,7 @@
         '\"',
         '\'',
         '\''};
-            this.fastColoredTextBox3.AutoScrollMinSize = new System.Drawing.Size(252, 18);
+            this.fastColoredTextBox3.AutoScrollMinSize = new System.Drawing.Size(281, 18);
             this.fastColoredTextBox3.BackBrush = null;
             this.fastColoredTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.fastColoredTextBox3.BookmarkColor = System.Drawing.Color.Blue;
@@ -1621,7 +1553,7 @@
         '\"',
         '\'',
         '\''};
-            this.fastColoredTextBox4.AutoScrollMinSize = new System.Drawing.Size(252, 18);
+            this.fastColoredTextBox4.AutoScrollMinSize = new System.Drawing.Size(281, 18);
             this.fastColoredTextBox4.BackBrush = null;
             this.fastColoredTextBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.fastColoredTextBox4.BookmarkColor = System.Drawing.Color.Blue;
@@ -1897,7 +1829,7 @@
         '\"',
         '\'',
         '\''};
-            this.fastColoredTextBox5.AutoScrollMinSize = new System.Drawing.Size(222, 18);
+            this.fastColoredTextBox5.AutoScrollMinSize = new System.Drawing.Size(251, 18);
             this.fastColoredTextBox5.BackBrush = null;
             this.fastColoredTextBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.fastColoredTextBox5.BookmarkColor = System.Drawing.Color.Blue;
@@ -2111,7 +2043,7 @@
             // checkBox16
             // 
             this.checkBox16.AutoSize = true;
-            this.checkBox16.Location = new System.Drawing.Point(443, 30);
+            this.checkBox16.Location = new System.Drawing.Point(169, 30);
             this.checkBox16.Name = "checkBox16";
             this.checkBox16.Size = new System.Drawing.Size(31, 17);
             this.checkBox16.TabIndex = 100;
@@ -2121,7 +2053,7 @@
             // checkBox17
             // 
             this.checkBox17.AutoSize = true;
-            this.checkBox17.Location = new System.Drawing.Point(478, 30);
+            this.checkBox17.Location = new System.Drawing.Point(206, 30);
             this.checkBox17.Name = "checkBox17";
             this.checkBox17.Size = new System.Drawing.Size(31, 17);
             this.checkBox17.TabIndex = 101;
@@ -2141,7 +2073,7 @@
             // checkBox15
             // 
             this.checkBox15.AutoSize = true;
-            this.checkBox15.Location = new System.Drawing.Point(403, 30);
+            this.checkBox15.Location = new System.Drawing.Point(128, 30);
             this.checkBox15.Name = "checkBox15";
             this.checkBox15.Size = new System.Drawing.Size(34, 17);
             this.checkBox15.TabIndex = 99;
@@ -2151,7 +2083,7 @@
             // checkBox18
             // 
             this.checkBox18.AutoSize = true;
-            this.checkBox18.Location = new System.Drawing.Point(128, 30);
+            this.checkBox18.Location = new System.Drawing.Point(237, 30);
             this.checkBox18.Name = "checkBox18";
             this.checkBox18.Size = new System.Drawing.Size(41, 17);
             this.checkBox18.TabIndex = 102;
@@ -2181,7 +2113,7 @@
             // checkBox19
             // 
             this.checkBox19.AutoSize = true;
-            this.checkBox19.Location = new System.Drawing.Point(169, 30);
+            this.checkBox19.Location = new System.Drawing.Point(278, 30);
             this.checkBox19.Name = "checkBox19";
             this.checkBox19.Size = new System.Drawing.Size(35, 17);
             this.checkBox19.TabIndex = 103;
@@ -2212,7 +2144,7 @@
             // checkBox20
             // 
             this.checkBox20.AutoSize = true;
-            this.checkBox20.Location = new System.Drawing.Point(206, 30);
+            this.checkBox20.Location = new System.Drawing.Point(315, 30);
             this.checkBox20.Name = "checkBox20";
             this.checkBox20.Size = new System.Drawing.Size(34, 17);
             this.checkBox20.TabIndex = 104;
@@ -2243,7 +2175,7 @@
             // checkBox21
             // 
             this.checkBox21.AutoSize = true;
-            this.checkBox21.Location = new System.Drawing.Point(246, 30);
+            this.checkBox21.Location = new System.Drawing.Point(355, 30);
             this.checkBox21.Name = "checkBox21";
             this.checkBox21.Size = new System.Drawing.Size(35, 17);
             this.checkBox21.TabIndex = 105;
@@ -2263,7 +2195,7 @@
             // checkBox22
             // 
             this.checkBox22.AutoSize = true;
-            this.checkBox22.Location = new System.Drawing.Point(285, 30);
+            this.checkBox22.Location = new System.Drawing.Point(394, 30);
             this.checkBox22.Name = "checkBox22";
             this.checkBox22.Size = new System.Drawing.Size(35, 17);
             this.checkBox22.TabIndex = 106;
@@ -2283,7 +2215,7 @@
             // checkBox23
             // 
             this.checkBox23.AutoSize = true;
-            this.checkBox23.Location = new System.Drawing.Point(324, 30);
+            this.checkBox23.Location = new System.Drawing.Point(433, 30);
             this.checkBox23.Name = "checkBox23";
             this.checkBox23.Size = new System.Drawing.Size(37, 17);
             this.checkBox23.TabIndex = 107;
@@ -2303,7 +2235,7 @@
             // checkBox24
             // 
             this.checkBox24.AutoSize = true;
-            this.checkBox24.Location = new System.Drawing.Point(363, 30);
+            this.checkBox24.Location = new System.Drawing.Point(472, 30);
             this.checkBox24.Name = "checkBox24";
             this.checkBox24.Size = new System.Drawing.Size(34, 17);
             this.checkBox24.TabIndex = 108;
@@ -2644,8 +2576,6 @@
         private MaterialSkin.Controls.MaterialButton materialButton8;
         private MaterialSkin.Controls.MaterialButton materialButton29;
         private MaterialSkin.Controls.MaterialButton materialButton30;
-        private MaterialSkin.Controls.MaterialButton materialButton31;
-        private MaterialSkin.Controls.MaterialButton materialButton32;
         private MaterialSkin.Controls.MaterialButton materialButton33;
         private MaterialSkin.Controls.MaterialButton materialButton34;
         private FlatUI.FlatTextBox flatTextBox19;
@@ -2656,7 +2586,6 @@
         private MaterialSkin.Controls.MaterialButton materialButton38;
         private MaterialSkin.Controls.MaterialButton materialButton37;
         private MaterialSkin.Controls.MaterialButton materialButton36;
-        private MaterialSkin.Controls.MaterialButton materialButton35;
         private FlatUI.FlatTextBox flatTextBox24;
         private FlatUI.FlatTextBox flatTextBox25;
         private System.Windows.Forms.TabPage tabPage8;
