@@ -163,21 +163,27 @@ namespace LPD_Modern
             double bigramPeak = 0;
             double bigramLow = 0;
 
-            // If there are bigrams in the text, calculate the maximum and minimum bigram frequencies
+            // If there are bigrams in the text, calculate the bigram peak and low values directly
             if (totalBigramCount > 0)
             {
-                int maxBigramFrequency = int.MinValue;
-                int minBigramFrequency = int.MaxValue;
+                bool firstIteration = true;
 
                 foreach (var pair in bigramFrequency)
                 {
-                    if (pair.Value > maxBigramFrequency) maxBigramFrequency = pair.Value;
-                    if (pair.Value < minBigramFrequency) minBigramFrequency = pair.Value;
-                }
+                    double frequencyRatio = (double)pair.Value / totalBigramCount;
 
-                // Calculate the bigram peak and low values as a fraction of the total number of bigrams
-                bigramPeak = (double)maxBigramFrequency / totalBigramCount;
-                bigramLow = (double)minBigramFrequency / totalBigramCount;
+                    if (firstIteration)
+                    {
+                        bigramPeak = frequencyRatio;
+                        bigramLow = frequencyRatio;
+                        firstIteration = false;
+                    }
+                    else
+                    {
+                        if (frequencyRatio > bigramPeak) bigramPeak = frequencyRatio;
+                        if (frequencyRatio < bigramLow) bigramLow = frequencyRatio;
+                    }
+                }
             }
 
             // Return a tuple containing the calculated bigram peak and low values
@@ -189,6 +195,9 @@ namespace LPD_Modern
             // Create a new dictionary to store the frequency of each trigram in the user input
             Dictionary<string, int> trigramFrequency = new Dictionary<string, int>();
 
+            // Define the delimiters
+            string delimiters = "-.&$§/•%\" ";
+
             // Get the total number of runes in the user input
             int totalRuneCount = userInput.Length;
 
@@ -197,6 +206,15 @@ namespace LPD_Modern
             {
                 // Extract the current trigram from the user input
                 string trigram = userInput.Substring(i, 3);
+
+                // Check if any character in the trigram is a delimiter
+                bool containsDelimiter = trigram.Any(c => delimiters.Contains(c));
+
+                // If the trigram contains a delimiter, skip to the next iteration
+                if (containsDelimiter)
+                {
+                    continue;
+                }
 
                 // If the current trigram already exists in the dictionary, increment its frequency
                 if (trigramFrequency.ContainsKey(trigram))
@@ -226,7 +244,7 @@ namespace LPD_Modern
             if (totalTrigramCount > 0)
             {
                 // Calculate the ratio of unique trigrams in the text compared to the total count of trigrams 
-                trigramRatio = (double)trigramFrequency.Count() / totalTrigramCount;
+                trigramRatio = (double)trigramFrequency.Count / totalTrigramCount;
             }
 
             // Return the calculated trigram ratio
@@ -327,11 +345,23 @@ namespace LPD_Modern
             // Create a new empty dictionary named repeatedGrams
             Dictionary<string, int> repeatedGrams = new Dictionary<string, int>();
 
+            // Define the delimiters
+            string delimiters = "-.&$§/•%\" ";
+
             // Iterate over the text in n-gram chunks and count the occurrences of each n-gram
             for (int i = 0; i <= text.Length - n; i++)
             {
                 // Get the n-gram at the current position
                 string gram = text.Substring(i, n);
+
+                // Check if any character in the n-gram is a delimiter
+                bool containsDelimiter = gram.Any(c => delimiters.Contains(c));
+
+                // If the n-gram contains a delimiter, skip to the next iteration
+                if (containsDelimiter)
+                {
+                    continue;
+                }
 
                 // Check if the repeatedGrams dictionary already contains the current n-gram
                 if (repeatedGrams.ContainsKey(gram))
@@ -355,6 +385,9 @@ namespace LPD_Modern
             // Create a new dictionary named similarGrams to store the similar grams in the input text
             Dictionary<string, int> similarGrams = new Dictionary<string, int>();
 
+            // Define the delimiters
+            string delimiters = "-.&$§/•%\" ";
+
             // Create arrays of runes, numerics, and primes
             string[] runeArrayStr = Functions.runeArray;
             char[] runeArray = new char[runeArrayStr.Length];
@@ -371,15 +404,13 @@ namespace LPD_Modern
                 // Get the 3-gram at the current position
                 string gram = text.Substring(i, 3);
 
-                // Calculate the numeric value of the gram using the numericArray
-                int gramValue = 1;
-                foreach (char c in gram)
+                // Check if any character in the 3-gram is a delimiter
+                bool containsDelimiter = gram.Any(c => delimiters.Contains(c));
+
+                // If the 3-gram contains a delimiter, skip to the next iteration
+                if (containsDelimiter)
                 {
-                    int index = Array.IndexOf(runeArray, c);
-                    if (index != -1 && index < numericArray.Length)
-                    {
-                        gramValue *= numericArray[index];
-                    }
+                    continue;
                 }
 
                 // Generate all possible similar grams by changing one rune
@@ -393,15 +424,13 @@ namespace LPD_Modern
                             gramChars[j] = c;
                             string similarGram = new string(gramChars);
 
-                            // Calculate the numeric value of the similar gram using the numericArray
-                            int similarGramValue = 1;
-                            foreach (char sc in similarGram)
+                            // Check if any character in the similar gram is a delimiter
+                            bool similarGramContainsDelimiter = similarGram.Any(ch => delimiters.Contains(ch));
+
+                            // If the similar gram contains a delimiter, skip to the next iteration
+                            if (similarGramContainsDelimiter)
                             {
-                                int index = Array.IndexOf(runeArray, sc);
-                                if (index != -1 && index < numericArray.Length)
-                                {
-                                    similarGramValue *= numericArray[index];
-                                }
+                                continue;
                             }
 
                             // Check if the text contains the similar gram and add it to the similarGrams dictionary if it does
@@ -420,15 +449,8 @@ namespace LPD_Modern
                     }
                 }
             }
-            /*
-             Debug statements
-            Console.WriteLine($"Found {similarGrams.Count} similar grams for 3-grams in text of length {text.Length}.");
-            foreach (KeyValuePair<string, int> pair in similarGrams)
-            {
-                Console.WriteLine($"{pair.Key}: {pair.Value}");
-            }
-            */
-            //Return the dictionary of similar grams in the input text
+
+            // Return the dictionary of similar grams in the input text
             return similarGrams;
         }
 

@@ -703,7 +703,7 @@ namespace LPD_Modern
         private void materialButton20_Click(object sender, EventArgs e)
         {
             // Get the delimiters and the Vigenere key from the text boxes
-            string delimiters = "-.&$§/•ᛄ%\" ";
+            string delimiters = "-.&$§/•%\" ";
             string key = fastColoredTextBox2.Text.Replace("\r\n", "");
 
             // Split the cipher text into lines and create a dictionary for the Gematria Primus values
