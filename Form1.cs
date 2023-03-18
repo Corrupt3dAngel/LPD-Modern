@@ -603,12 +603,20 @@ namespace LPD_Modern
 
             // Convert the runes to Latin characters using the gematriaPrimus dictionary
             Dictionary<char, string> gematriaPrimus = Functions.DirectTranslation;
-            Dictionary<char, int> latinFrequencyCounts = new Dictionary<char, int>();
+            Dictionary<string, int> latinFrequencyCounts = new Dictionary<string, int>();
+
             foreach (var runeCount in RunetoLatinFrequencyCounts)
             {
                 if (gematriaPrimus.TryGetValue(runeCount.Key, out string latinChar))
                 {
-                    char latin = latinChar[0]; // Assuming single-character Latin representation
+                    string latin = latinChar;
+
+                    // Custom Latin character combinations
+                    if (latin == "C" || latin == "K") latin = "C/K";
+                    else if (latin == "S" || latin == "Z") latin = "S/Z";
+                    else if (latin == "NG" || latin == "ING") latin = "NG/ING";
+                    else if (latin == "IA" || latin == "IO") latin = "IA/IO";
+
                     if (latinFrequencyCounts.ContainsKey(latin))
                     {
                         latinFrequencyCounts[latin] += runeCount.Value;
@@ -620,14 +628,15 @@ namespace LPD_Modern
                 }
             }
 
-            // Calculate the total number of Latin letters
+            // Calculate the total number of Latin strings
             int totalLetters = latinFrequencyCounts.Values.Sum();
 
             // Convert the latinFrequencyCounts to store percentage values
-            Dictionary<char, double> latinFrequencyPercentage = latinFrequencyCounts.ToDictionary(
+            Dictionary<string, double> latinFrequencyPercentage = latinFrequencyCounts.ToDictionary(
                 pair => pair.Key,
                 pair => (double)pair.Value / totalLetters * 100
             );
+
 
             // Sort the dictionaries in descending order / AKA from greatest to least
             var bigramFrequencySorted = bigramFrequency2.OrderByDescending(pair => pair.Value);
