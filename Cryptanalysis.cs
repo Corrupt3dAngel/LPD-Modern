@@ -300,46 +300,6 @@ namespace LPD_Modern
             return sameGPRatio;
         }
 
-        public static Dictionary<char, double> CalculateLetterFrequency(string text)
-        {
-            // Create a new empty dictionary named letterFrequency
-            Dictionary<char, double> letterFrequency = new Dictionary<char, double>();
-
-            // Initialize the total number of letters to 0
-            int totalLetters = 0;
-
-            // Count the number of occurrences of each letter in the text
-            foreach (char c in text)
-            {
-                // Check if the current character is a letter
-                if (char.IsLetter(c))
-                {
-                    // Check if the letterFrequency dictionary already contains the current letter
-                    if (letterFrequency.ContainsKey(c))
-                    {
-                        // If it does, increment the count for the current letter
-                        letterFrequency[c]++;
-                    }
-                    else
-                    {
-                        // If it doesn't, add the current letter to the letterFrequency dictionary with a count of 1
-                        letterFrequency.Add(c, 1);
-                    }
-                    // Increment the total number of letters
-                    totalLetters++;
-                }
-            }
-
-            // Calculate the frequency of each letter as a percentage
-            foreach (char c in letterFrequency.Keys.ToList())
-            {
-                letterFrequency[c] = letterFrequency[c] / totalLetters * 100;
-            }
-
-            // Return the letterFrequency dictionary containing the frequency of each letter in the text
-            return letterFrequency;
-        }
-
         public static Dictionary<string, int> CalculateRepeatedGrams(string text, int n)
         {
             // Create a new empty dictionary named repeatedGrams

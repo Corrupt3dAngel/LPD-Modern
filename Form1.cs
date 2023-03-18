@@ -516,7 +516,7 @@ namespace LPD_Modern
 
         }
 
-        public async void fastColoredTextBox1_Load(object sender, EventArgs e)
+        public async void fastColoredTextBox1_Load(object sender, EventArgs e) //Gonna optimize this soon. . .
         {
             // Get the user input from the FastColoredTextBox1 control
             string userInput = fastColoredTextBox1.Text;
@@ -573,6 +573,12 @@ namespace LPD_Modern
             // Calculate the letter frequency of the input in parallel
             Dictionary<char, int> letterFrequency = await Task.Run(() => Cryptanalysis.GetRuneFrequency(userInput));
 
+            // Calculate the letterFrequencyPercentage of the input in parallel
+            Dictionary<char, int> letterFrequencyCounts = await Task.Run(() => Cryptanalysis.GetRuneFrequency(userInput));
+
+            // Calculate the latinFrequencyPercentage of the input in parallel
+            Dictionary<char, int> RunetoLatinFrequencyCounts = await Task.Run(() => Cryptanalysis.GetRuneFrequency(userInput));
+
             // Calculate the repeated grams of length 3 in the input in parallel
             Dictionary<string, int> repeatedGrams = await Task.Run(() => Cryptanalysis.CalculateRepeatedGrams(userInput, 3));
 
@@ -585,6 +591,43 @@ namespace LPD_Modern
             {
                 trigramRatio = Cryptanalysis.CalculateTrigramRatio(trigramFrequency, trigramFrequency.Sum(pair => pair.Value));
             }
+
+            // Calculate the total number of letters
+            int totalRunes = letterFrequencyCounts.Values.Sum();
+
+            // Convert the letterFrequencyCounts to store percentage values
+            Dictionary<char, double> letterFrequencyPercentage = letterFrequencyCounts.ToDictionary(
+                pair => pair.Key,
+                pair => (double)pair.Value / totalRunes * 100
+            );
+
+            // Convert the runes to Latin characters using the gematriaPrimus dictionary
+            Dictionary<char, string> gematriaPrimus = Functions.DirectTranslation;
+            Dictionary<char, int> latinFrequencyCounts = new Dictionary<char, int>();
+            foreach (var runeCount in RunetoLatinFrequencyCounts)
+            {
+                if (gematriaPrimus.TryGetValue(runeCount.Key, out string latinChar))
+                {
+                    char latin = latinChar[0]; // Assuming single-character Latin representation
+                    if (latinFrequencyCounts.ContainsKey(latin))
+                    {
+                        latinFrequencyCounts[latin] += runeCount.Value;
+                    }
+                    else
+                    {
+                        latinFrequencyCounts.Add(latin, runeCount.Value);
+                    }
+                }
+            }
+
+            // Calculate the total number of Latin letters
+            int totalLetters = latinFrequencyCounts.Values.Sum();
+
+            // Convert the latinFrequencyCounts to store percentage values
+            Dictionary<char, double> latinFrequencyPercentage = latinFrequencyCounts.ToDictionary(
+                pair => pair.Key,
+                pair => (double)pair.Value / totalLetters * 100
+            );
 
             // Sort the dictionaries in descending order / AKA from greatest to least
             var bigramFrequencySorted = bigramFrequency2.OrderByDescending(pair => pair.Value);
@@ -609,6 +652,8 @@ namespace LPD_Modern
             flatTextBox18.Text = "Bigram Frequency: " + string.Join(", ", bigramFrequencySorted.Select(pair => $"{pair.Key}:{pair.Value}"));
             flatTextBox3.Text = "Trigram Frequency: " + string.Join(", ", trigramFrequencySorted.Select(pair => $"{pair.Key}:{pair.Value}"));
             flatTextBox6.Text = "Letter Frequency: " + string.Join(", ", letterFrequencySorted.Select(pair => $"{pair.Key}:{pair.Value}"));
+            flatTextBox28.Text = "Letter Frequency (%): " + string.Join(", ", letterFrequencyPercentage.Select(pair => $"{pair.Key}: {pair.Value:0.00}%"));
+            flatTextBox27.Text = "Converted Latin Frequency (%): " + string.Join(", ", latinFrequencyPercentage.Select(pair => $"{pair.Key}: {pair.Value:0.00}%"));
             flatTextBox9.Text = "Repeated Grams (length 3): " + string.Join(", ", repeatedGramsSorted.Select(pair => $"{pair.Key}:{pair.Value}"));
             flatTextBox12.Text = "Similar Grams (length 3): " + string.Join(", ", similarGramsSorted.Select(pair => $"{pair.Key}:{pair.Value}"));
             flatTextBox16.Text = "Trigram Ratio: " + trigramRatio.ToString();
