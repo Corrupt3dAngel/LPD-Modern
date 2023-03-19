@@ -1451,37 +1451,50 @@ namespace LPD_Modern
                 // Get the input text from fastColoredTextBox5
                 string inputText = fastColoredTextBox5.Text;
 
-                // Get the transposition key from flatTextBox26
-                string keyText = flatTextBox26.Text;
+                // Split the input text into lines
+                string[] inputLines = inputText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
 
-                // Remove interrupter runes from the input text
-                for (int i = 0; i < inputText.Length; i++)
+                // Prepare the output StringBuilder
+                StringBuilder outputTextBuilder = new StringBuilder();
+
+                // Process each line
+                foreach (string line in inputLines)
                 {
-                    inputText = RemoveInterrupterRunes(inputText);
+                    // Convert the input text to its Latin format using the runicToLatin dictionary
+                    Dictionary<char, string> runicToLatin = Functions.DirectTranslation;
+                    StringBuilder latinInputBuilder = new StringBuilder();
+                    foreach (char c in line)
+                    {
+                        string latinChar;
+                        if (runicToLatin.TryGetValue(c, out latinChar))
+                        {
+                            latinInputBuilder.Append(latinChar);
+                        }
+                        else
+                        {
+                            latinInputBuilder.Append(c);
+                        }
+                    }
+                    string latinInputText = latinInputBuilder.ToString();
+
+                    // Get the transposition key from flatTextBox26
+                    string keyText = flatTextBox26.Text;
+
+                    // Remove interrupter runes from the Latin input text
+                    for (int i = 0; i < latinInputText.Length; i++)
+                    {
+                        latinInputText = RemoveInterrupterRunes(latinInputText);
+                    }
+
+                    // Decrypt the Latin input text using the transposition cipher and key
+                    string plainText = Functions.TranspositionCipher(latinInputText, keyText);
+
+                    // Append the decrypted plaintext to the output text
+                    outputTextBuilder.AppendLine(plainText);
                 }
 
-                // Decrypt the input text using the transposition cipher and key
-                string plainText = Functions.TranspositionCipher(inputText, keyText);
-
-                // Convert the decrypted text to its Latin format using the runicToLatin dictionary
-                Dictionary<char, string> runicToLatin = Functions.DirectTranslation;
-                StringBuilder latinTextBuilder = new StringBuilder();
-                foreach (char c in plainText)
-                {
-                    string latinChar;
-                    if (runicToLatin.TryGetValue(c, out latinChar))
-                    {
-                        latinTextBuilder.Append(latinChar);
-                    }
-                    else
-                    {
-                        latinTextBuilder.Append(c);
-                    }
-                }
-                string latinText = latinTextBuilder.ToString();
-
-                // Set the output text to the decrypted and converted plaintext
-                fastColoredTextBox3.Text = latinText;
+                // Set the output text to the decrypted plaintext
+                fastColoredTextBox3.Text = outputTextBuilder.ToString();
             }
             catch (ArgumentException ex)
             {
@@ -1489,8 +1502,8 @@ namespace LPD_Modern
                 MessageBox.Show(ex.Message);
             }
 
-            // Display an alert message
-            MessageBox.Show("Please note that this feature is still a work in progress and may not produce accurate results. Use the output with caution and report any issues or errors you encounter.");
+        // Display an alert message
+        MessageBox.Show("Please note that this feature is still a work in progress and may not produce accurate results. Use the output with caution and report any issues or errors you encounter.");
         }
 
         private void flatTextBox26_TextChanged(object sender, EventArgs e)

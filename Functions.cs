@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -218,7 +219,6 @@ namespace LPD_Modern
 
             return newGrid;
         }
-
         public static string TranspositionCipher(string inputText, string keyText)
         {
             inputText = inputText.Replace(" ", "");
@@ -226,8 +226,8 @@ namespace LPD_Modern
 
             int[] key = keyText.Select(c => int.Parse(c.ToString())).ToArray();
 
-            int numRows = keyText.Length;
-            int numCols = (int)Math.Ceiling((double)inputText.Length / numRows);
+            int numRows = (int)Math.Ceiling((double)inputText.Length / key.Length);
+            int numCols = key.Length;
 
             int numSpaces = numRows * numCols - inputText.Length;
             if (numSpaces > 0)
@@ -245,10 +245,13 @@ namespace LPD_Modern
                 }
             }
 
+            int[] sortedKey = (int[])key.Clone();
+            Array.Sort(sortedKey);
+
             StringBuilder plainTextBuilder = new StringBuilder();
-            foreach (int keyIndex in key)
+            foreach (int keyIndex in sortedKey)
             {
-                int oldIndex = keyIndex - 1;
+                int oldIndex = Array.IndexOf(key, keyIndex);
                 for (int row = 0; row < numRows; row++)
                 {
                     if (grid[row, oldIndex] != ' ')
