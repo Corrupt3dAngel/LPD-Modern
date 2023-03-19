@@ -1673,7 +1673,7 @@ namespace LPD_Modern
 
         private void materialButton31_Click_1(object sender, EventArgs e)
         {
-            string filePath = "C:\\Users\\Tjohn\\Desktop\\LPDecrypt-Modern\\criblist.txt";
+            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Desktop", "LPDecrypt-Modern", "criblist.txt");
             string[] words;
 
             if (File.Exists(filePath))
