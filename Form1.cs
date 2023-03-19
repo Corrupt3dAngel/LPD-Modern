@@ -40,8 +40,8 @@ namespace LPD_Modern
             }
             else if (checkBox13.Checked)
             {
-                    // If it is, add all interrupter runes to the list
-                    interrupterRunes.AddRange(new string[] { "ᚠ" });
+                // If it is, add all interrupter runes to the list
+                interrupterRunes.AddRange(new string[] { "ᚠ" });
             }
 
             //Don't Ask why. . .
@@ -1502,8 +1502,8 @@ namespace LPD_Modern
                 MessageBox.Show(ex.Message);
             }
 
-        // Display an alert message
-        MessageBox.Show("Please note that this feature is still a work in progress and may not produce accurate results. Use the output with caution and report any issues or errors you encounter.");
+            // Display an alert message
+            MessageBox.Show("Please note that this feature is still a work in progress and may not produce accurate results. Use the output with caution and report any issues or errors you encounter.");
         }
 
         private void flatTextBox26_TextChanged(object sender, EventArgs e)
@@ -1669,6 +1669,51 @@ namespace LPD_Modern
         private void tabPage4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void materialButton31_Click_1(object sender, EventArgs e)
+        {
+            string filePath = "C:\\Users\\Tjohn\\Desktop\\LPDecrypt-Modern\\criblist.txt";
+            string[] words;
+
+            if (File.Exists(filePath))
+            {
+                words = File.ReadAllLines(filePath);
+            }
+            else
+            {
+                MessageBox.Show("File not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            FindReadableWords(words);
+        }
+
+        private void FindReadableWords(string[] words)
+        {
+            fastColoredTextBox3.Range.ClearStyle(StyleIndex.All);
+            fastColoredTextBox3.Range.ClearFoldingMarkers();
+
+            TextStyle readableWordStyle = new TextStyle(Brushes.Blue, null, FontStyle.Bold);
+
+            foreach (string word in words)
+            {
+                string trimmedWord = word.Trim();
+                if (!string.IsNullOrEmpty(trimmedWord))
+                {
+                    string pattern = @"\b" + Regex.Escape(trimmedWord) + @"\b";
+                    Regex regex = new Regex(pattern, RegexOptions.IgnoreCase);
+
+                    var matches = regex.Matches(fastColoredTextBox3.Text);
+                    foreach (Match match in matches)
+                    {
+                        Place start = fastColoredTextBox3.PositionToPlace(match.Index);
+                        Place end = fastColoredTextBox3.PositionToPlace(match.Index + match.Length);
+                        Range range = new Range(fastColoredTextBox3, start, end);
+                        range.SetStyle(readableWordStyle);
+                    }
+                }
+            }
         }
     }
 }
