@@ -13,6 +13,5 @@ Improve accuracy in Cryptoanalysis even further.
 Fix the Transposition Tab.
 Further enhance the user interface (UI).
 
-
-![Screenshot_3](https://user-images.githubusercontent.com/85088397/225729534-ceb1208b-402a-467e-b417-b774bab0c11c.png)
-![Screenshot_5](https://user-images.githubusercontent.com/85088397/225729554-85e0ee80-28cb-490a-a47d-2d34f604ea33.png)
+![Screenshot_1](https://user-images.githubusercontent.com/85088397/226188131-43e3fe22-330d-4c1d-8565-a18eafc51882.jpg)
+![Screenshot_2](https://user-images.githubusercontent.com/85088397/226188134-8652a5a0-aa8d-4913-929c-de388657f395.jpg)
